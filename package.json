@@ -9,7 +9,7 @@
     "dev": "next dev",
     "format": "biome format --write .",
     "lint": "biome check .",
-    "prepare": "lefthook install",
+    "prepare": "lefthook install || true",
     "release": "changeset publish",
     "start": "next start",
     "version-packages": "changeset version"
@@ -71,5 +71,10 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@11.8.0"
+  "packageManager": "pnpm@11.8.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "lefthook"
+    ]
+  }
 }
