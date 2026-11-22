@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "求职意向 / 职位头衔",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "https://your-website.com",
+    "summary": "在这里简要介绍你的优势、经验年限和核心能力（3–5 行）。",
+    "location": {
+      "city": "城市",
+      "region": "省/州",
+      "countryCode": "CN"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "yourname",
+        "url": "https://github.com/yourname"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "职位名称",
+      "url": "",
+      "startDate": "2023-01",
+      "endDate": "",
+      "summary": "一句话概括你在该岗位的职责范围。",
+      "highlights": [
+        "用可量化的结果描述一条成就（例如：将接口响应时间降低 30%）。",
+        "描述另一条你主导或参与的关键工作。"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "学校名称",
+      "url": "",
+      "area": "专业",
+      "studyType": "学历",
+      "startDate": "2019-09",
+      "endDate": "2023-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "技能分类",
+      "level": "",
+      "keywords": ["技能1", "技能2", "技能3"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "中文",
+      "fluency": "母语"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "项目名称",
+      "startDate": "",
+      "endDate": "",
+      "description": "简述项目背景、你的角色和技术栈。",
+      "highlights": ["一句话说明项目成果或亮点。"],
+      "url": "",
+      "keywords": ["技术1", "技术2"],
+      "roles": []
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

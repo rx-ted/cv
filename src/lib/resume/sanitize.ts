@@ -4,18 +4,43 @@
  * all that survives. Runs on save and again on render, with no DOM needed.
  */
 
-const ALLOWED = new Set(["p", "br", "ul", "ol", "li", "strong", "b", "em", "i", "u", "s", "strike", "a"])
+const ALLOWED = new Set([
+  "p",
+  "br",
+  "ul",
+  "ol",
+  "li",
+  "strong",
+  "b",
+  "em",
+  "i",
+  "u",
+  "s",
+  "strike",
+  "a",
+])
 const VOID = new Set(["br"])
 const SAFE_HREF = /^(https?:|mailto:|tel:)/i
 const ALIGN = /text-align:\s*(left|center|right|justify)/i
 
-const ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", colon: ":", nbsp: " " }
+const ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  colon: ":",
+  nbsp: " ",
+}
 
 /** Decode the entities a browser would decode inside an attribute value. */
 function decodeEntities(value: string): string {
   return value.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);?/gi, (m, code: string) => {
     if (code[0] === "#") {
-      const n = code[1].toLowerCase() === "x" ? parseInt(code.slice(2), 16) : parseInt(code.slice(1), 10)
+      const n =
+        code[1].toLowerCase() === "x"
+          ? parseInt(code.slice(2), 16)
+          : parseInt(code.slice(1), 10)
       return Number.isFinite(n) ? String.fromCodePoint(n) : m
     }
     return ENTITIES[code.toLowerCase()] ?? m
@@ -23,11 +48,18 @@ function decodeEntities(value: string): string {
 }
 
 function encodeAttr(value: string): string {
-  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
 }
 
 function readAttr(attrs: string, name: string): string | null {
-  const re = new RegExp(`(?:^|\\s)${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'>]+))`, "i")
+  const re = new RegExp(
+    `(?:^|\\s)${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'>]+))`,
+    "i",
+  )
   const m = re.exec(attrs)
   return m ? (m[1] ?? m[2] ?? m[3] ?? "") : null
 }
@@ -44,7 +76,12 @@ export function safeHref(raw: string): string | null {
 
 export function sanitizeHtml(html: string): string {
   if (!html) return ""
-  const stripped = html.replace(/<(script|style|iframe|object|embed|template)[\s\S]*?<\/\1\s*>/gi, "").replace(/<!--[\s\S]*?-->/g, "")
+  const stripped = html
+    .replace(
+      /<(script|style|iframe|object|embed|template)[\s\S]*?<\/\1\s*>/gi,
+      "",
+    )
+    .replace(/<!--[\s\S]*?-->/g, "")
   const open: string[] = []
   let out = ""
   const parts = stripped.split(/(<[^>]*>)/)

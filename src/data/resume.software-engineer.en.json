@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Software Engineer",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "https://github.com/yourname",
+    "summary": "Software engineer focused on backend/full-stack development, APIs, distributed systems, and performance.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "yourname",
+        "url": "https://github.com/yourname"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "Software Engineer",
+      "url": "",
+      "startDate": "2022-01",
+      "endDate": "",
+      "summary": "Built and maintained core product features.",
+      "highlights": [
+        "Reduced API latency by X% via refactoring",
+        "Led feature X from design to launch"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "Computer Science",
+      "studyType": "B.S.",
+      "startDate": "2018-09",
+      "endDate": "2022-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Languages",
+      "level": "",
+      "keywords": ["TypeScript", "Python", "Go"]
+    },
+    {
+      "name": "Frameworks",
+      "level": "",
+      "keywords": ["Node.js", "React", "PostgreSQL"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "Project",
+      "startDate": "",
+      "endDate": "",
+      "description": "Project overview and stack.",
+      "highlights": ["Outcome"],
+      "url": "",
+      "keywords": ["Stack"],
+      "roles": []
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

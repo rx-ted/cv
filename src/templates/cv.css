@@ -8,6 +8,9 @@
   --cv-text: #1f2328;
   --cv-muted: #5b6370;
   --cv-rule: #d9dde3;
+  --cv-link: var(--cv-color);
+  --cv-muted-bg: var(--cv-color-soft);
+  --cv-accent: var(--cv-color);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,7 +24,8 @@
   text-align: left;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .cv *,
@@ -29,10 +33,11 @@
 .cv *::after {
   box-sizing: border-box;
   margin: 0;
+  min-width: 0;
 }
 
 .cv a {
-  color: inherit;
+  color: var(--cv-link);
   text-decoration: none;
 }
 
@@ -196,6 +201,7 @@
   font-family: var(--cv-font-heading);
   font-size: var(--cv-fs-heading);
   font-weight: var(--cv-fw-heading);
+  color: var(--cv-accent);
 }
 
 .cv-item-sub,
@@ -258,6 +264,7 @@ div.cv-item-sub {
 }
 
 .cv-rich a {
+  color: var(--cv-link);
   text-decoration: underline;
 }
 
@@ -278,17 +285,26 @@ div.cv-item-sub {
   align-items: center;
   gap: 6pt;
   break-inside: avoid;
+  min-width: 0;
+}
+
+.cv-skill > .cv-skill-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .cv-skill-level {
   color: var(--cv-muted);
   font-size: 0.92em;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .cv-dots {
   display: inline-flex;
   gap: 2pt;
+  flex: 0 0 auto;
 }
 
 .cv-dots span {
@@ -299,7 +315,7 @@ div.cv-item-sub {
 }
 
 .cv-dots span.on {
-  background: var(--cv-color);
+  background: var(--cv-accent);
 }
 
 .cv-skills-bars {
@@ -328,7 +344,7 @@ div.cv-item-sub {
 .cv-bar span {
   display: block;
   height: 100%;
-  background: var(--cv-color);
+  background: var(--cv-accent);
 }
 
 /* Links */
@@ -363,7 +379,7 @@ div.cv-item-sub {
 }
 
 .cv-link-url {
-  color: var(--cv-color);
+  color: var(--cv-link);
 }
 
 /* Two-column scaffolding */
@@ -836,7 +852,6 @@ div.cv-item-sub {
   display: block;
   margin: 0 auto var(--cv-gap-section);
 }
-
 
 .cv[data-template="duo"] .cv-header {
   flex-direction: column;

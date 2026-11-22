@@ -1,0 +1,75 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Backend Developer",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "Backend engineer focused on APIs, databases, and reliable services.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "Backend Developer",
+      "url": "",
+      "startDate": "2022-01",
+      "endDate": "",
+      "summary": "Designed and built backend services.",
+      "highlights": ["Designed core APIs", "Improved queries and caching"],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "Computer Science",
+      "studyType": "B.S.",
+      "startDate": "2018-09",
+      "endDate": "2022-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Backend",
+      "level": "",
+      "keywords": ["Node.js", "Java", "PostgreSQL"]
+    },
+    {
+      "name": "Infra",
+      "level": "",
+      "keywords": ["Redis", "Docker"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

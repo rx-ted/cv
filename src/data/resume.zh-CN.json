@@ -1,0 +1,275 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "高敬义",
+    "label": "软件工程师",
+    "image": "https://picx.19981204.xyz/rest/z2Oyink.jpeg",
+    "email": "gjy.18sui@gmail.com",
+    "phone": "17372264057",
+    "url": "https://19981204.xyz/",
+    "summary": "软件工程师，具备后端系统开发、Web 全栈开发及云平台应用建设经验，熟悉数据采集与处理、服务架构设计及 Cloudflare 无服务器应用开发。具备独立负责项目技术选型、系统设计、开发实现、测试部署及交付的能力。\n熟悉 TypeScript、Node.js、MySQL 等技术栈，拥有个人产品研发、数据处理系统及云平台应用的实际开发经验。注重代码质量、工程规范与系统可维护性，具备良好的技术分析、问题排查和持续学习能力，并持续关注软件工程化、自动化交付及物联网与人工智能等技术领域。",
+    "location": {
+      "city": "常州",
+      "region": "江苏",
+      "countryCode": "中国"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "rx-ted",
+        "url": "https://github.com/rx-ted"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "个人项目",
+      "position": "独立开发者｜个人产品与开源项目",
+      "url": "",
+      "startDate": "2026-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "持续开展个人产品研发与开源项目建设，涵盖 Web 全栈开发、后端架构、Cloudflare 无服务器部署、AI 本地模型应用及开发基础设施建设。",
+        "独立负责项目从需求分析、技术选型、架构设计到开发部署的完整流程，涵盖个人作品集、博客系统、图床平台、TypeScript 基础库，以及 AI 视频生成、本地模型辅助编程与项目管理等实践。"
+      ],
+      "location": ""
+    },
+    {
+      "name": "Airslope, LLC",
+      "position": "远程软件工程师",
+      "url": "",
+      "startDate": "2025-08",
+      "endDate": "2026-01",
+      "summary": "",
+      "highlights": [
+        "独立负责美国政府公开数据采集与处理系统的架构设计与开发，涵盖任务调度、数据处理、存储架构及测试保障。",
+        "实现全量数据采集，首次采集约 3–4 万条记录，耗时约 1–2 小时；支持每日增量采集约 10–20 条记录。",
+        "实现任务状态记录、失败重试及自动任务调度，保障数据持续更新。",
+        "使用 Node.js、TypeScript、MySQL、AWS S3、Axios、Cheerio 等技术完成数据采集、处理与存储，并使用 Jest 编写测试。"
+      ],
+      "location": ""
+    },
+    {
+      "name": "谷歌上海",
+      "position": "软件工程师（Research）",
+      "url": "",
+      "startDate": "2023-07",
+      "endDate": "2024-08",
+      "summary": "",
+      "highlights": [
+        "参与公司内部软件项目的开发与维护，保障项目按时交付。",
+        "与团队协作解决日常开发中的技术问题，推动项目进展。",
+        "主动识别并解决用户痛点，提出并实施多项功能改进，提升产品功能与用户体验。"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "北京联合大学",
+      "url": "",
+      "area": "计算机科学与技术",
+      "studyType": "本科（工学学士）",
+      "startDate": "2018-09",
+      "endDate": "2022-07",
+      "gpa": "",
+      "courses": [],
+      "highlights": [
+        "专业排名前五，多次获得奖学金二等奖、三等奖。",
+        "2021 年 6 月获得 CET-4 证书。",
+        "2022 年被评为北京优秀大学生。"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "编程语言",
+      "level": "熟练",
+      "keywords": ["TypeScript", "JavaScript", "Python", "Java", "C/C++"]
+    },
+    {
+      "name": "后端开发",
+      "level": "熟练",
+      "keywords": ["Node.js", "RESTful API", "JWT", "Swagger", "Spring Boot"]
+    },
+    {
+      "name": "数据与中间件",
+      "level": "熟练",
+      "keywords": ["MySQL", "Redis", "RabbitMQ", "OpenSearch"]
+    },
+    {
+      "name": "Web 与云平台",
+      "level": "熟练",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Astro",
+        "Tailwind CSS",
+        "Cloudflare Workers",
+        "Cloudflare Pages",
+        "Cloudflare D1",
+        "Cloudflare R2",
+        "Cloudflare KV",
+        "AWS S3"
+      ]
+    },
+    {
+      "name": "工程化与 DevOps",
+      "level": "熟练",
+      "keywords": [
+        "Git",
+        "pnpm",
+        "Turborepo",
+        "Changesets",
+        "Lefthook",
+        "Biome",
+        "Docker",
+        "Linux",
+        "GitHub Actions",
+        "CI/CD",
+        "npm Trusted Publishing"
+      ]
+    },
+    {
+      "name": "嵌入式与硬件",
+      "level": "熟练",
+      "keywords": ["ESP32-S3", "I2S", "数字麦克风", "PCB 设计"]
+    },
+    {
+      "name": "AI 与生成式技术",
+      "level": "熟练",
+      "keywords": [
+        "ComfyUI",
+        "Z-Image-Turbo",
+        "LTX",
+        "本地模型部署",
+        "LLM API",
+        "AI Agent"
+      ]
+    }
+  ],
+  "languages": [],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "PicX — 图片资源管理平台",
+      "startDate": "",
+      "endDate": "",
+      "description": "基于 Cloudflare 无服务器架构开发的图片资源管理平台，支持图片上传、对象存储与图片处理，并集成 Google / GitHub OAuth 登录。",
+      "highlights": [
+        "访问项目: https://picx.19981204.xyz",
+        "项目图片: https://picx.19981204.xyz/rest/2026/11/9FgM8nk.png"
+      ],
+      "url": "https://picx.19981204.xyz",
+      "keywords": [
+        "TypeScript",
+        "Cloudflare Workers",
+        "Cloudflare R2",
+        "OAuth"
+      ],
+      "roles": []
+    },
+    {
+      "name": "Blog — 开源个人博客与知识管理系统",
+      "startDate": "",
+      "endDate": "",
+      "description": "面向个人写作与知识沉淀的博客系统，支持 Markdown 内容管理、双编辑模式、AI 写作辅助、主题与发布管理，部署于 Cloudflare 无服务器体系。",
+      "highlights": [
+        "访问博客: https://blog.19981204.xyz",
+        "前身项目: https://rx-ted.github.io/blog",
+        "项目图片: https://picx.19981204.xyz/rest/2026/11/DUSM8nk.png"
+      ],
+      "url": "https://blog.19981204.xyz",
+      "keywords": ["Next.js", "TypeScript", "Cloudflare", "D1", "R2", "KV"],
+      "roles": []
+    },
+    {
+      "name": "Portfolio — 个人作品集网站",
+      "startDate": "",
+      "endDate": "",
+      "description": "将基于 HTML / CSS / JavaScript 的个人主页重构为 Astro + TypeScript 项目，使用 Cloudflare Pages 部署，展示个人介绍、项目与技术作品。",
+      "highlights": [
+        "访问网站: https://about.19981204.xyz",
+        "项目图片: https://picx.19981204.xyz/rest/2026/11/ozcr8nk.png"
+      ],
+      "url": "https://about.19981204.xyz",
+      "keywords": ["Astro", "TypeScript", "Cloudflare Pages"],
+      "roles": []
+    },
+    {
+      "name": "美国政府产品召回数据采集与处理系统（Recall Crawler）",
+      "startDate": "",
+      "endDate": "",
+      "description": "独立设计并开发的数据采集与处理系统，支持全量与每日增量抓取、任务调度、失败重试及测试保障；首次采集约 3–4 万条数据，并支持每日持续更新。",
+      "highlights": ["项目图片: https://picx.19981204.xyz/rest/M5gn8nk.png"],
+      "url": "",
+      "keywords": [
+        "Node.js",
+        "TypeScript",
+        "MySQL",
+        "AWS S3",
+        "Axios",
+        "Cheerio",
+        "Jest"
+      ],
+      "roles": []
+    },
+    {
+      "name": "系统性能优化与用户体验提升（内部项目）",
+      "startDate": "",
+      "endDate": "",
+      "description": "参与公司内部系统性能优化：C++ 优化图结构与算法提升响应约 10%+；Python 优化查询与缓存降低 10PB+ 数据访问延迟数百毫秒；TypeScript 优化交互并完善文档缩短新用户上手时间约 20%。",
+      "highlights": ["项目图片: https://picx.19981204.xyz/rest/LrrO8nk.png"],
+      "url": "",
+      "keywords": ["C++", "Python", "TypeScript", "ProtoBuf"],
+      "roles": []
+    },
+    {
+      "name": "ESP32 与智能硬件实践",
+      "startDate": "",
+      "endDate": "",
+      "description": "围绕 ESP32-S3、智能家居及设备交互开展软硬件实践，涉及数字麦克风阵列、I2S 音频接口、摄像头与显示设备等方向。",
+      "highlights": [
+        "开展 ESP32-S3 硬件平台实践，并围绕音频采集与语音交互进行方案探索。",
+        "完成控制板 PCB 设计、打板及测试，涉及 AC 220V 与低压电路分区、电源转换及控制电路。",
+        "探索智能家居、网络摄像头及显示设备等软硬件集成应用。"
+      ],
+      "url": "",
+      "keywords": [
+        "ESP32-S3",
+        "I2S",
+        "数字麦克风",
+        "PCB 设计",
+        "智能家居",
+        "嵌入式系统"
+      ],
+      "roles": ["个人技术实践"]
+    },
+    {
+      "name": "AI 应用与本地生成式模型实践",
+      "startDate": "",
+      "endDate": "",
+      "description": "围绕生成式图像、视频及大语言模型应用开展实践，使用本地工作流工具和模型进行内容生成与实验。",
+      "highlights": [
+        "使用 ComfyUI 搭建节点式生成工作流，实践 Z-Image-Turbo 文生图。",
+        "进行本地模型环境部署与工作流调试。",
+        "开展 AI Agent 工作流应用实践。"
+      ],
+      "url": "",
+      "keywords": ["ComfyUI", "Z-Image-Turbo", "Local AI Models", "AI Agent"],
+      "roles": ["个人技术实践"]
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "后端工程师",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "专注于服务端开发，熟悉 API 设计、数据库与系统可靠性。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "后端工程师",
+      "url": "",
+      "startDate": "2022-01",
+      "endDate": "",
+      "summary": "负责后端服务设计与开发。",
+      "highlights": ["设计并实现核心接口", "优化查询与缓存"],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "大学",
+      "url": "",
+      "area": "计算机科学",
+      "studyType": "本科",
+      "startDate": "2018-09",
+      "endDate": "2022-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "后端",
+      "level": "",
+      "keywords": ["Node.js", "Java", "PostgreSQL"]
+    },
+    { "name": "基础设施", "level": "", "keywords": ["Redis", "Docker"] }
+  ],
+  "languages": [{ "language": "中文", "fluency": "母语" }],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

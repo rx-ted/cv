@@ -1,0 +1,69 @@
+"use client";
+
+import type { PointerEvent as ReactPointerEvent, RefObject } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
+
+export type ColorAreaOffset = { x: number; y: number };
+export type ColorAreaRect = { width: number; height: number };
+
+export type ColorAreaPointer<Element extends HTMLElement> = {
+  areaRef: RefObject<Element | null>;
+  dragging: boolean;
+  onPointerDown: (event: ReactPointerEvent) => void;
+};
+
+// window listeners rather than pointer capture, so pointerdown can emit immediately and gated effect owns cleanup
+export function useColorArea<Element extends HTMLElement = HTMLDivElement>(
+  onChange: (offset: ColorAreaOffset, rect: ColorAreaRect) => void,
+  targetRef?: RefObject<Element | null>,
+): ColorAreaPointer<Element> {
+  const ownRef = useRef<Element | null>(null);
+  const areaRef = targetRef ?? ownRef;
+  const [dragging, setDragging] = useState(false);
+  const dragPointerId = useRef<number | null>(null);
+  const emitDragChange = useEffectEvent(onChange);
+
+  useEffect(() => {
+    if (!dragging) return;
+
+    function onMove(event: globalThis.PointerEvent) {
+      if (event.pointerId !== dragPointerId.current) return;
+      const el = areaRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      emitDragChange({ x: event.clientX - rect.left, y: event.clientY - rect.top }, { width: rect.width, height: rect.height });
+    }
+    function onEnd(event: globalThis.PointerEvent) {
+      if (event.pointerId !== dragPointerId.current) return;
+      dragPointerId.current = null;
+      setDragging(false);
+    }
+
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onEnd);
+    window.addEventListener("pointercancel", onEnd);
+
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onEnd);
+      window.removeEventListener("pointercancel", onEnd);
+    };
+  }, [dragging, areaRef]);
+
+  function onPointerDown(event: ReactPointerEvent) {
+    if (event.button !== 0) return;
+    // a second finger landing mid-drag must not steal or end the first pointer's gesture
+    if (dragPointerId.current !== null && !event.isPrimary) return;
+    dragPointerId.current = event.pointerId;
+    const el = areaRef.current;
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      onChange({ x: event.clientX - rect.left, y: event.clientY - rect.top }, { width: rect.width, height: rect.height });
+    }
+    setDragging(true);
+    // Prevent native selection at the gesture source without restyling the entire document.
+    event.preventDefault();
+  }
+
+  return { areaRef, dragging, onPointerDown };
+}

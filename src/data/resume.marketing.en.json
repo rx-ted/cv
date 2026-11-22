@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Marketing",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "Marketing professional focused on brand, growth campaigns, content, and channel performance.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "Marketing Specialist/Manager",
+      "url": "",
+      "startDate": "2020-06",
+      "endDate": "",
+      "summary": "Planned and executed online/offline campaigns.",
+      "highlights": [
+        "Improved acquisition/conversion by X%",
+        "Optimized channel ROI"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "Marketing/Communications",
+      "studyType": "B.S.",
+      "startDate": "2016-09",
+      "endDate": "2020-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Marketing",
+      "level": "",
+      "keywords": ["Content", "Paid Channels", "Campaigns"]
+    },
+    {
+      "name": "Analytics",
+      "level": "",
+      "keywords": ["Reporting", "Google Analytics"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

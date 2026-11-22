@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "产品经理",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "以用户和数据驱动的产品经理，擅长需求分析、路线规划与跨团队协作，推动产品增长与体验优化。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "产品经理",
+      "url": "",
+      "startDate": "2021-06",
+      "endDate": "",
+      "summary": "负责 XX 产品线的规划与迭代。",
+      "highlights": [
+        "通过优化转化漏斗提升 XX%",
+        "协调研发/设计交付多个关键版本"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "大学名称",
+      "url": "",
+      "area": "专业名称",
+      "studyType": "本科",
+      "startDate": "2017-09",
+      "endDate": "2021-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "产品能力",
+      "level": "",
+      "keywords": ["需求分析", "原型设计", "数据分析"]
+    },
+    { "name": "工具", "level": "", "keywords": ["Figma", "SQL", "Axure"] }
+  ],
+  "languages": [{ "language": "中文", "fluency": "母语" }],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

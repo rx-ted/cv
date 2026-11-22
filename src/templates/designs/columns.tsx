@@ -1,4 +1,11 @@
-import { ContactLine, ContactStack, type Ctx, Photo, Sections, splitColumns } from "../blocks"
+import {
+  ContactLine,
+  ContactStack,
+  type Ctx,
+  Photo,
+  Sections,
+  splitColumns,
+} from "../blocks"
 
 /*
  * Two-column designs. The side column holds short sections (skills,
@@ -10,7 +17,9 @@ function NameBlock({ ctx }: { ctx: Ctx }) {
   return (
     <div className="cv-name-block">
       <h1 className="cv-name">{ctx.name}</h1>
-      {ctx.resume.personal.jobTitle ? <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div> : null}
+      {ctx.resume.personal.jobTitle ? (
+        <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div>
+      ) : null}
     </div>
   )
 }

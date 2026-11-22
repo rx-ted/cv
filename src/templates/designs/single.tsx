@@ -1,17 +1,35 @@
-import { ContactLine, ContactStack, type Ctx, Photo, Sections, visibleSections } from "../blocks"
+import {
+  ContactLine,
+  ContactStack,
+  type Ctx,
+  Photo,
+  Sections,
+  visibleSections,
+} from "../blocks"
 
 /*
  * Single-column designs. They read top to bottom, which is what applicant
  * tracking systems parse best, and they map cleanly to the DOCX export.
  */
 
-function Header({ ctx, photoSide = "left" }: { ctx: Ctx; photoSide?: "left" | "right" }) {
+function Header({
+  ctx,
+  photoSide = "left",
+}: {
+  ctx: Ctx
+  photoSide?: "left" | "right"
+}) {
   return (
-    <header className="cv-header" data-photo={ctx.hasPhoto ? photoSide : "none"}>
+    <header
+      className="cv-header"
+      data-photo={ctx.hasPhoto ? photoSide : "none"}
+    >
       {photoSide === "left" ? <Photo ctx={ctx} /> : null}
       <div className="cv-header-text">
         <h1 className="cv-name">{ctx.name}</h1>
-        {ctx.resume.personal.jobTitle ? <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div> : null}
+        {ctx.resume.personal.jobTitle ? (
+          <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div>
+        ) : null}
         <ContactLine ctx={ctx} />
       </div>
       {photoSide === "right" ? <Photo ctx={ctx} /> : null}
@@ -64,7 +82,11 @@ export function Meridian({ ctx }: { ctx: Ctx }) {
   return (
     <div className="cv-pad">
       <Header ctx={ctx} photoSide="right" />
-      <Sections ctx={ctx} sections={visibleSections(ctx)} opts={{ entry: "stacked" }} />
+      <Sections
+        ctx={ctx}
+        sections={visibleSections(ctx)}
+        opts={{ entry: "stacked" }}
+      />
     </div>
   )
 }
@@ -74,7 +96,11 @@ export function Ledger({ ctx }: { ctx: Ctx }) {
   return (
     <div className="cv-pad">
       <Header ctx={ctx} />
-      <Sections ctx={ctx} sections={visibleSections(ctx)} opts={{ entry: "stacked" }} />
+      <Sections
+        ctx={ctx}
+        sections={visibleSections(ctx)}
+        opts={{ entry: "stacked" }}
+      />
     </div>
   )
 }
@@ -87,7 +113,9 @@ export function Swift({ ctx }: { ctx: Ctx }) {
         <Photo ctx={ctx} />
         <div className="cv-header-text">
           <h1 className="cv-name">{ctx.name}</h1>
-          {ctx.resume.personal.jobTitle ? <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div> : null}
+          {ctx.resume.personal.jobTitle ? (
+            <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div>
+          ) : null}
         </div>
       </header>
       <ContactStack ctx={ctx} />
@@ -101,7 +129,11 @@ export function Vector({ ctx }: { ctx: Ctx }) {
   return (
     <div className="cv-pad">
       <Header ctx={ctx} photoSide="right" />
-      <Sections ctx={ctx} sections={visibleSections(ctx)} opts={{ entry: "stacked" }} />
+      <Sections
+        ctx={ctx}
+        sections={visibleSections(ctx)}
+        opts={{ entry: "stacked" }}
+      />
     </div>
   )
 }
@@ -111,7 +143,11 @@ export function TimelineDesign({ ctx }: { ctx: Ctx }) {
   return (
     <div className="cv-pad">
       <Header ctx={ctx} />
-      <Sections ctx={ctx} sections={visibleSections(ctx)} opts={{ entry: "stacked", dateGutter: true }} />
+      <Sections
+        ctx={ctx}
+        sections={visibleSections(ctx)}
+        opts={{ entry: "stacked", dateGutter: true }}
+      />
     </div>
   )
 }
@@ -120,10 +156,15 @@ export function TimelineDesign({ ctx }: { ctx: Ctx }) {
 export function Bold({ ctx }: { ctx: Ctx }) {
   return (
     <div className="cv-pad">
-      <header className="cv-header" data-photo={ctx.hasPhoto ? "right" : "none"}>
+      <header
+        className="cv-header"
+        data-photo={ctx.hasPhoto ? "right" : "none"}
+      >
         <div className="cv-header-text">
           <h1 className="cv-name">{ctx.name}</h1>
-          {ctx.resume.personal.jobTitle ? <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div> : null}
+          {ctx.resume.personal.jobTitle ? (
+            <div className="cv-jobtitle">{ctx.resume.personal.jobTitle}</div>
+          ) : null}
           <ContactLine ctx={ctx} />
         </div>
         <Photo ctx={ctx} />

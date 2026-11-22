@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "前端工程师",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "专注于 Web 前端开发，熟悉现代框架与工程化实践。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "前端工程师",
+      "url": "",
+      "startDate": "2022-01",
+      "endDate": "",
+      "summary": "负责 Web 应用开发与优化。",
+      "highlights": ["提升页面性能与体验", "参与组件库建设"],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "大学",
+      "url": "",
+      "area": "计算机相关",
+      "studyType": "本科",
+      "startDate": "2018-09",
+      "endDate": "2022-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    { "name": "前端", "level": "", "keywords": ["React", "TypeScript", "CSS"] },
+    { "name": "工程化", "level": "", "keywords": ["Vite", "Webpack"] }
+  ],
+  "languages": [{ "language": "中文", "fluency": "母语" }],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

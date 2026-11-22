@@ -1,276 +1,79 @@
-# cvfree.io
+# cv
 
-Open-source, self-hosted resume builder. Edit on the left, see the page update on the right, switch templates at any time and export to PDF, Word, plain text or JSON. Your data stays on your server as plain JSON files.
+## 这个项目是什么？
 
-Built with Next.js 16, React 19, Tailwind CSS 4, shadcn/ui (Base UI) and ReUI.
+cv 是一个开源的简历编辑器（基于 Next.js），提供可视化编辑、实时预览、多模板与导出能力。简历数据采用 **JSON Resume v1.0.0 超集** 结构，便于与 JSON Resume 生态互通，也方便自行备份与迁移。
 
-![The cvfree editor, with the form on the left and the live A4 preview on the right](docs/screenshots/editor.png)
+## 为什么要开发它？
 
-## Features
+- 希望有一个可自托管、数据可控的简历编辑工具，避免把个人信息长期交给不透明的在线服务。
+- 希望编辑体验接近“所见即所得”，同时保留结构化数据（JSON）带来的可复用与可导出能力。
+- 希望在中文/英文场景下都能顺手使用，并能快速套用常见岗位的示例模板开始填写。
 
-- **Live editor.** Every keystroke shows up in the A4 or Letter preview, with page break guides, page count and zoom.
-- **14 templates.** Single column, two column, ATS friendly, with photo, creative. Switch any time without losing content.
-- **Deep customization.** Color (presets or any custom color), heading and body fonts (15 self-hosted fonts), font sizes and weights, line height, margins, spacing, date format, header alignment, skills layout, photo shape and size.
-- **All the usual sections.** Summary, experience, education, skills, languages, links, projects, certifications, courses, internships, volunteering, awards, publications, hobbies, references, plus custom sections. Drag to reorder sections and entries, rename, hide, or move between columns.
-- **Photo upload** with a crop dialog. Stored inside the resume, so backups are self-contained.
-- **Header, footer and page numbers** (1, 1/3 or Page 1 of 3) on every PDF page.
-- **Exports.** Pixel-exact PDF (headless Chromium), DOCX, TXT and a JSON backup you can import again.
-- **One-click backup.** Download every resume, cover letter and the settings as one zip from Settings, and restore it on any install.
-- **JSON Resume in and out.** Import a [JSON Resume](https://jsonresume.org) file from another tool, or export one to take your content elsewhere.
-- **LinkedIn import.** Upload the zip LinkedIn gives you under *Get a copy of your data* and start from a resume that already holds your positions, education, skills and languages.
-- **Review.** Completeness score and instant writing checks (missing dates, no numbers, passive phrases, summary length...).
-- **Tailor.** Paste a job link or description, get a keyword match score and add missing skills in one click. Save a tailored copy.
-- **Optional AI** review and tailoring with any OpenAI-compatible API, including a local Ollama.
-- **Resume language** for section titles and dates: English, Portuguese, Spanish, French, German.
-- **Interface in English or Brazilian Portuguese.** Pick it in Settings. It is a separate choice from the language of each resume, so you can write an English resume in a Portuguese app.
-- **Public link.** One click gives a resume a read-only address you can send to a recruiter, with PDF and Word download. Revoke it any time.
-- **Cover letters.** One per application, created from a resume so name, contact details, fonts and color already match. Greeting, date and sign-off follow the letter's language. PDF, Word and text export, and an optional AI first draft from the posting.
-- **Help me write.** Sentence starters for the summary and for job bullets, by role family, in English and Portuguese. Every name and number is a placeholder in brackets: the shape is given, the facts are yours.
-- **Version history.** A copy is kept before each save (at most one every ten minutes, thirty kept). Restore any of them from the Download menu.
-- **Combine with.** Merge two resumes into a new one: summary, skills and languages are merged, jobs and education appended, originals untouched.
-- **MCP server.** Connect Claude Code, Claude Desktop, Cursor or your own agent to the instance and let it list, review, edit and export your resumes and cover letters, with the same checks as the editor.
-- **Undo and redo**, autosave, optional password protection.
+## 有哪些功能和技术特点？
 
-## A quick tour
+**功能**
 
-Every person, company and link in these screenshots is made up.
+- 可视化编辑与实时预览：左侧编辑、右侧预览，支持缩放与分页预览体验。
+- 多语言界面：支持 **简体中文 / English**（`zh-CN` / `en`）。
+- 示例模板库：内置多类岗位示例（如通用、软件工程、前端、后端、全栈、产品、设计、物流、市场、应届等），可一键加载后继续编辑；也可不选示例直接从空白/默认流程开始。
+- JSON Resume 兼容：支持导入 JSON Resume；导出可生成符合 JSON Resume 规范的 JSON（项目扩展字段会在导出时剥离）。
+- 模板与样式：提供多套模板与可调样式（颜色、字体、间距、栏数等）。
+- 本地化数据存储：数据主要保存在浏览器本地（按应用内逻辑持久化），便于自用与自托管。
 
-### Dashboard
+**技术特点**
 
-All your resumes, each with a live thumbnail of its current template. Create a blank one, start from a filled-in example, or use Import to bring in a JSON file (a cvfree backup or a JSON Resume file) or your LinkedIn profile. The menu on each card renames, duplicates, downloads or deletes it.
+- 基于 **Next.js 16（App Router）+ React 19 + TypeScript**。
+- 使用 **Tailwind CSS 4** 与组件化 UI 构建界面。
+- 使用 **Zustand** 管理应用与编辑状态。
+- 简历数据以 JSON Resume 为基础扩展，配合规范化（normalize）与导入/导出逻辑保证结构一致性。
 
-![Dashboard with three resumes in different templates](docs/screenshots/dashboard.png)
+## 如何安装、配置和运行？
 
-### Import from LinkedIn
+### 环境要求
 
-LinkedIn lets you download your own profile as a zip, and cvfree turns that zip into a resume.
+- Node.js（建议 20 及以上）
+- 包管理器：仓库包含 `pnpm-lock.yaml`，推荐使用 **pnpm**
 
-1. On LinkedIn, open **Settings & Privacy → Data privacy → Get a copy of your data**.
-2. Pick the larger archive, or at least Profile, Positions, Education, Skills and Languages, and request it. LinkedIn sends an email when the zip is ready. A small selection takes minutes, the full archive can take a day.
-3. On the cvfree dashboard, choose **Import → LinkedIn profile** and pick the zip.
-
-The import reads the profile (name, headline, summary, location and websites), positions, education, skills, languages, certifications, projects, honors, publications, volunteering, courses, the primary email and the first phone number. The rest of the archive, such as connections, messages and ad data, is skipped and never stored. The zip is read in memory on your server and nothing of it is kept besides the new resume.
-
-It always creates a new resume, so nothing you already have changes. Skills arrive without a level, since LinkedIn does not record one. A LinkedIn profile is longer than a resume should be, so read it through and cut.
-
-### Editor
-
-The form is on the left and the page is on the right. There is no save button: changes show up in the preview as you type and are saved a moment later. The bar on top shows how complete the resume is. Sections fold, can be dragged into a new order, renamed, hidden or moved to the other column. The Download menu exports PDF, Word, plain text, a JSON backup and a JSON Resume file.
-
-### Templates
-
-Fourteen templates, all fed by the same content, so switching never loses anything. Filter by photo, two column, ATS or DOCX. Each template brings its own fonts and spacing, and you can change all of it afterwards.
-
-![All 14 templates rendered with the same resume](docs/screenshots/templates.png)
-
-### Customize
-
-The Customize tab has three parts. **Template & Colors** picks the design and the main color, from a preset or any color you like. **Text** sets the fonts, sizes, weights and line height. **Layout** covers page size, margins, spacing, date format and position, skills layout and the photo.
-
-![Template picker with live thumbnails of your own content](docs/screenshots/customize.png)
-
-![Font, size and weight settings](docs/screenshots/customize-text.png)
-
-### Review
-
-Instant checks that run in the browser as you type: missing contact details, a summary that is too short or too long, jobs without dates or numbers, passive phrases such as "responsible for". Nothing leaves your server. If you connect an AI provider, the same tab can ask it for a full review.
-
-![Review tab with the completeness score and two writing tips](docs/screenshots/review.png)
-
-### Tailor
-
-Paste a job posting, or its link, and see which of its keywords your resume already covers. Click a missing keyword to add it as a skill, then save a tailored copy for that application and keep the original as it is.
-
-![Tailor tab comparing a job posting with the resume](docs/screenshots/tailor.png)
-
-### On a phone
-
-The editor works on small screens too. Switch between the form and the preview with the tabs on top.
-
-<p align="center"><img src="docs/screenshots/mobile.png" alt="Editor and preview on a phone" width="640"></p>
-
-### Public link
-
-The Share button in the editor gives the resume a read-only address like `https://cv.example.com/s/gP-ywzw2ydBe2QhvztNbk6zV`. Anyone with the link sees the latest saved version and can download the PDF or the Word file. They cannot edit it, cannot see your other resumes, and the page asks search engines not to index it. Revoke the link and the address stops working at once. A duplicate or an imported backup never carries the link along.
-
-![Share dialog with the public link](docs/screenshots/share.png)
-
-### Cover letters
-
-"New cover letter" on the dashboard takes the name, contact details and style from one of your resumes. Fill in the company, the position and, if you know it, the hiring manager: the letter writes the greeting, the date and the sign-off in its language, and you write the three or four paragraphs that matter. With an AI provider configured, "Write with AI" drafts them from the posting and your resume, using only what the resume says.
-
-![Cover letter editor with the live preview](docs/screenshots/cover-letter.png)
-
-### Settings
-
-Defaults for new resumes (template, language and color), the language of the app itself, and a status panel that shows where data is stored, which browser renders PDFs, and whether AI, the password and the MCP endpoint are on.
-
-![Settings page](docs/screenshots/settings.png)
-
-### Connect an AI assistant (MCP)
-
-The app is also an [MCP](https://modelcontextprotocol.io) server at `/mcp`. An assistant connected to it gets 29 tools: list and read resumes, review them, compare them with a job posting, add jobs, degrees, skills and links, change the template and colors, export PDF and Word, restore a version, and write cover letters. Writes go through the same schema and sanitizer as the editor, and the tools tell the assistant to add only facts that came from you.
-
-Set `CVFREE_MCP_TOKEN` to a long random string and restart. The Settings page then shows the exact command for Claude Code and the JSON for Claude Desktop, Cursor and other clients.
-
-```bash
-claude mcp add --transport http cvfree https://cv.example.com/mcp --header "Authorization: Bearer $CVFREE_MCP_TOKEN"
-```
-
-![The MCP block on the Settings page, with the connection snippets](docs/screenshots/mcp.png)
-
-With a password set and no token the endpoint is off. Without either, it is as open as the rest of the app on that port.
-
-## Quick start with Docker
-
-You need Docker with the compose plugin.
-
-```bash
-git clone https://github.com/samuelbelo/cvfree.git
-cd cvfree
-cp .env.example .env
-docker compose up -d
-```
-
-Open `http://localhost:3000` (or `http://your-server-ip:3000`).
-
-Resumes live in the `cvfree-data` Docker volume. They survive restarts and upgrades.
-
-### On a VPS with your own domain and HTTPS
-
-1. Point an A record for your domain (for example `cv.example.com`) to the server.
-2. In `.env`, set `DOMAIN=cv.example.com` and a `CVFREE_PASSWORD`.
-3. Start with the HTTPS profile. Caddy gets a Let's Encrypt certificate on its own.
-
-```bash
-docker compose --profile https up -d
-```
-
-Open `https://cv.example.com`.
-
-### Update
-
-```bash
-git pull
-docker compose up -d --build
-```
-
-### Backup and restore
-
-The quick way is in the app. **Settings → Backup → Download backup** gives you one zip with every resume, every cover letter and the settings. **Restore from backup** on the same page reads that zip back in, on this install or on a new one. It adds what is missing and replaces a resume or letter only when the zip holds a newer copy, so nothing is deleted and running it twice is harmless. A resume it replaces goes to the version history first. Share links come back as they were. The zip can be up to 100 MB and does not carry the version history.
-
-The zip is laid out like the data folder (`resumes/`, `letters/`, `settings.json`), so you can also unpack it straight into an empty volume.
-
-To copy the whole volume by hand, history included, use Docker. Everything lives in one volume: the resumes and letters (one JSON file each, photos included), the version history and `settings.json`. The compose file pins the project name, so the volume is always called `cvfree_cvfree-data`. Check with `docker volume ls`.
-
-Back up, from the folder with the compose file:
-
-```bash
-docker run --rm -v cvfree_cvfree-data:/data -v "$PWD":/backup alpine tar czf /backup/cvfree-backup.tgz -C /data .
-```
-
-Restore on a clean install (start the app once first, so the volume exists, then stop it):
-
-```bash
-docker compose down
-```
-
-```bash
-docker run --rm -v cvfree_cvfree-data:/data -v "$PWD":/backup alpine sh -c "rm -rf /data/* && tar xzf /backup/cvfree-backup.tgz -C /data && chown -R 100:101 /data"
-```
-
-```bash
-docker compose up -d
-```
-
-The `chown` matters: the app runs as its own user inside the container and cannot write files the restore created as root.
-
-Each resume is also downloadable as JSON from the editor and can be imported from the dashboard, which is the quickest way to move one resume between installs. The backup keeps the template, colors and spacing. A JSON Resume file carries the content only, so it is the one to use with other tools.
-
-## Configuration
-
-All settings are environment variables. Set them in `.env` when using compose.
-
-| Variable | Default | What it does |
-| --- | --- | --- |
-| `CVFREE_PORT` | `3000` | Host port (compose only) |
-| `CVFREE_BIND` | `0.0.0.0` | Interface the port is published on. Use `127.0.0.1` with the HTTPS profile, so only Caddy is reachable. |
-| `CVFREE_PASSWORD` | empty | Password gate for the whole app. Set it on any public server. |
-| `CVFREE_MCP_TOKEN` | empty | Bearer token for the MCP endpoint at `/mcp`. Off when a password is set and this is empty. |
-| `DOMAIN` | empty | Domain for the optional Caddy HTTPS proxy |
-| `DATA_DIR` | `/data` in Docker, `./data` locally | Where resumes and settings are stored |
-| `CHROME_PATH` | auto | Chrome or Chromium binary for PDF export. Found automatically on most systems. |
-| `INTERNAL_URL` | `http://127.0.0.1:$PORT` | URL the PDF renderer uses to reach the app |
-| `AI_BASE_URL` | `https://api.openai.com/v1` | Any OpenAI-compatible endpoint |
-| `AI_API_KEY` | empty | API key for the endpoint (not needed for Ollama) |
-| `AI_MODEL` | empty | Model name. AI features stay off until this is set. |
-
-The Settings page in the app shows which of these are active, and lets you pick defaults for new resumes.
-
-## Releases
-
-Versions follow [semantic versioning](https://semver.org/) and are cut automatically from the commit messages ([Conventional Commits](https://www.conventionalcommits.org/)): a `fix:` on `main` becomes a patch release, a `feat:` a minor one. Each release gets a tag, an entry in [CHANGELOG.md](CHANGELOG.md), a GitHub release and a Docker image.
-
-Image tags on `ghcr.io/samuelbelo/cvfree`:
-
-| Tag | Meaning |
-| --- | --- |
-| `0.2.1` | that exact release, never changes |
-| `0.2` | the latest patch of that minor |
-| `latest` | the latest release |
-
-Pin the exact version in `.env` (`CVFREE_IMAGE=ghcr.io/samuelbelo/cvfree:0.2.1`) if you want upgrades to be a decision rather than a side effect of `docker compose pull`.
-
-## Security notes
-
-- **One password, one workspace.** `CVFREE_PASSWORD` protects the whole instance. Everyone who knows it sees and edits every resume. It is made for one person or one household, not for a public service with accounts.
-- **Without a password, anyone who can reach the port can read and change every resume.** Keep the port on your LAN or behind a VPN, or set the password.
-- **Job postings are fetched from public addresses only.** The Tailor tab refuses links to localhost, private networks, cloud metadata addresses and anything that redirects there. Pasting the text always works.
-- **Rich text is cleaned on save and on render.** Only paragraphs, lists, bold, italic, underline, strike, alignment and `http`, `https`, `mailto` or `tel` links survive, including in imported JSON.
-- **The MCP endpoint needs its own token** and gives an assistant the same access as the password. Wrong tokens are rate limited.
-- **Logins are rate limited** per client address, and the session cookie is `HttpOnly`, `SameSite=Lax` and `Secure` behind HTTPS.
-- Found a problem? Open an issue without personal data, or email the maintainer address on the GitHub profile for anything sensitive.
-
-## Local development
-
-Requirements: Node.js 22 or newer, pnpm, and Chrome, Chromium or Edge installed for PDF export.
+### 安装依赖
 
 ```bash
 pnpm install
+```
+
+### 本地开发
+
+```bash
 pnpm dev
 ```
 
-Open `http://localhost:3000`. Data is written to `./data`.
+浏览器访问：`http://localhost:3000`
+
+### 质量检查与构建
 
 ```bash
-pnpm build && pnpm start
+pnpm lint
+pnpm build
+pnpm start
 ```
 
-## How it works
+### 配置说明
 
-- `src/lib/resume/schema.ts` defines the resume document with zod. The editor state, the JSON on disk and the export format share this one shape.
-- `src/store/editor-store.ts` is a zustand store. Forms write to it, the preview reads from it, and autosave sends it to the API after a short pause.
-- `src/templates` holds the rendering. `blocks.tsx` renders sections the same way for every template, each design in `designs/` only decides structure, and `cv.css` styles everything from CSS variables built from the settings. Units are print units (mm, pt), so the preview and the PDF match.
-- `src/app/print/[id]` is a bare page with only the resume. The PDF export opens it in headless Chromium and prints it, then stamps page numbers with pdf-lib.
-- `src/lib/server/repo.ts` stores one JSON file per resume. Swap this module to use a database.
+当前项目以本地/自托管使用为主，常见配置通过环境变量或部署平台配置注入（若你在部署时需要自定义域名、反向代理等，请按你的环境自行配置）。
 
-## Adding a template
+## 如何参与开发或贡献代码？
 
-1. Write a component in `src/templates/designs/` that takes `{ ctx }` and composes the blocks (`Sections`, `ContactLine`, `Photo`...).
-2. Add its styles to `src/templates/cv.css` under `.cv[data-template="your-id"]`.
-3. Register it in `src/templates/registry.ts` with a name, tags and default fonts.
+欢迎以 Issue / Pull Request 方式参与贡献：
 
-It then shows up in the template picker with a live thumbnail.
+1. Fork 本仓库并创建你的分支（建议从 `main` 派生）。
+2. 在本地完成修改并自测（至少运行 `pnpm lint`，涉及构建改动建议运行 `pnpm build`）。
+3. 提交清晰的提交信息，说明动机与改动点。
+4. 发起 Pull Request，描述你解决的问题、主要改动与验证方式。
 
-## Adding an interface language
+如果你要改动数据结构（尤其是 `src/lib/resume/schema.ts`、规范化或导入导出逻辑），建议先在 Issue 中说明设计思路，便于对齐 JSON Resume 兼容性与迁移策略。
 
-The English text is the key, so the code reads `t("Save")` and a sentence with no translation yet shows in English instead of breaking.
+## 如何获取帮助、反馈问题？
 
-1. Copy `src/lib/ui/pt-BR.ts` to a new file and translate the values. Keep the `{name}` markers, they are filled in at run time.
-2. Add the language to `UI_LOCALES`, `UI_LOCALE_NAMES` and `DICTIONARIES` in `src/lib/ui/translate.ts`.
-
-It then shows up in the language list on the Settings page. The resume templates are not part of this: their section titles and dates follow the language of each resume.
-
-## License
-
-MIT
+- 在 GitHub 仓库中提交 **Issue**：描述问题现象、复现步骤、期望行为与环境信息（浏览器、操作系统、Node 版本等）。
+- 若是功能建议，请在 Issue 中说明使用场景与期望的交互方式。
+- 若你已经定位到问题原因或有修复方案，欢迎直接提交 PR 并在描述中关联对应 Issue。

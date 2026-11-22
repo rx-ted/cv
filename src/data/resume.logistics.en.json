@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Logistics / Supply Chain Specialist",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "Experience in warehouse and transportation coordination, inventory control, vendor communication, and process improvement.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "Logistics Specialist",
+      "url": "",
+      "startDate": "2020-03",
+      "endDate": "",
+      "summary": "Coordinated daily logistics and inventory operations.",
+      "highlights": [
+        "Reduced freight costs by X% via routing/scheduling",
+        "Improved inventory accuracy with cycle counts and reports"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "College/University",
+      "url": "",
+      "area": "Logistics / Supply Chain",
+      "studyType": "Associate/B.S.",
+      "startDate": "2016-09",
+      "endDate": "2020-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Operations",
+      "level": "",
+      "keywords": ["Inventory", "Transportation", "Vendor Management"]
+    },
+    {
+      "name": "Tools",
+      "level": "",
+      "keywords": ["Excel", "WMS", "ERP"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

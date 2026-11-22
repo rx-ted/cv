@@ -1,0 +1,268 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Ben Gao",
+    "label": "Software Engineer / Backend Engineer",
+    "image": "https://picx.19981204.xyz/rest/z2Oyink.jpeg",
+    "email": "gjy.18sui@gmail.com",
+    "phone": "17372264057",
+    "url": "https://19981204.xyz/",
+    "summary": "Software Engineer / Backend Developer with experience in backend services, data collection and processing, performance optimization, and Cloudflare serverless applications.\nI have a solid foundation in computer science and practical software development experience across the full lifecycle from requirements analysis and system design to implementation, testing, and deployment.\nMy experience includes backend service development, data collection and processing, performance optimization, and building serverless applications on Cloudflare. I can independently deliver modules and projects end-to-end.\nI value code quality and engineering practices, and bring strong learning ability, problem-solving skills, and collaboration.",
+    "location": {
+      "city": "Changzhou",
+      "region": "Jiangsu",
+      "countryCode": "CN"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "rx-ted",
+        "url": "https://github.com/rx-ted"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Personal",
+      "position": "Independent Developer — Personal & Open-source Projects",
+      "url": "",
+      "startDate": "2026-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "Continuously building personal and open-source projects covering web full-stack development, backend architecture, Cloudflare serverless deployment, and developer infrastructure.",
+        "Independently handled requirements, technical decisions, system design, development, and deployment for a portfolio site, blog system, image hosting platform, and reusable TypeScript libraries."
+      ],
+      "location": ""
+    },
+    {
+      "name": "Airslope, LLC",
+      "position": "Remote Software Engineer",
+      "url": "",
+      "startDate": "2025-08",
+      "endDate": "2026-01",
+      "summary": "",
+      "highlights": [
+        "Designed and implemented a U.S. government public recall data collection and processing system from scratch, including scheduling, processing, storage architecture, and testing.",
+        "Owned the full lifecycle and delivered full/incremental crawling, retries, storage, and continuous updates."
+      ],
+      "location": ""
+    },
+    {
+      "name": "Google Shanghai",
+      "position": "Software Engineer (Research)",
+      "url": "",
+      "startDate": "2023-07",
+      "endDate": "2024-08",
+      "summary": "",
+      "highlights": [
+        "Contributed to development and maintenance of internal software projects, ensuring on-time delivery.",
+        "Collaborated with the team to resolve technical issues and move projects forward.",
+        "Proactively identified user pain points and implemented improvements to enhance functionality and user experience."
+      ],
+      "location": ""
+    },
+    {
+      "name": "Flex (Suzhou)",
+      "position": "Materials Coordinator",
+      "url": "",
+      "startDate": "2022-06",
+      "endDate": "2023-06",
+      "summary": "",
+      "highlights": [
+        "Handled material coordination, adjustments, scrapping, reporting, and inventory analysis, using Python to assist with data processing.",
+        "Maintained material management data, produced regular reports, and supported operational decisions.",
+        "Participated in month-end inventory and coordination; proficient with office software."
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Beijing Union University",
+      "url": "",
+      "area": "B.Eng. in Computer Science and Technology",
+      "studyType": "",
+      "startDate": "2018-09",
+      "endDate": "2022-07",
+      "gpa": "",
+      "courses": [],
+      "highlights": [
+        "Ranked top 5 in major; received multiple second- and third-class scholarships.",
+        "Obtained CET-4 certificate (2021.06).",
+        "Recognized as an Outstanding College Student of Beijing (2022)."
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "熟练",
+      "keywords": ["C/C++", "TypeScript", "Python", "Java", "JavaScript"]
+    },
+    {
+      "name": "Backend",
+      "level": "熟练",
+      "keywords": [
+        "Node.js",
+        "Spring Boot",
+        "RESTful APIs",
+        "MyBatis-Plus",
+        "Spring Security",
+        "JWT",
+        "Swagger"
+      ]
+    },
+    {
+      "name": "Data & Middleware",
+      "level": "熟练",
+      "keywords": ["MySQL", "Redis", "RabbitMQ", "OpenSearch"]
+    },
+    {
+      "name": "Web & Cloud",
+      "level": "熟练",
+      "keywords": [
+        "Next.js",
+        "React",
+        "Astro",
+        "Tailwind CSS",
+        "Cloudflare Workers",
+        "D1",
+        "R2",
+        "KV",
+        "Pages"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "level": "熟练",
+      "keywords": [
+        "SDLC",
+        "Design patterns",
+        "Jest/Vitest",
+        "Documentation",
+        "Troubleshooting"
+      ]
+    },
+    {
+      "name": "Other",
+      "level": "熟练",
+      "keywords": ["AWS S3", "Axios", "Cheerio", "ProtoBuf"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "母语"
+    },
+    {
+      "language": "English",
+      "fluency": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Backend development",
+      "keywords": []
+    },
+    {
+      "name": "Cloudflare",
+      "keywords": []
+    },
+    {
+      "name": "Data processing",
+      "keywords": []
+    },
+    {
+      "name": "Full-stack development",
+      "keywords": []
+    },
+    {
+      "name": "Open source",
+      "keywords": []
+    }
+  ],
+  "references": [],
+  "projects": [
+    {
+      "name": "PicX — Image Asset Management Platform",
+      "startDate": "",
+      "endDate": "",
+      "description": "A serverless image management platform on Cloudflare with upload/storage/processing and Google/GitHub OAuth login.",
+      "highlights": [
+        "Visit: https://picx.19981204.xyz",
+        "Image: https://picx.19981204.xyz/rest/2026/11/9FgM8nk.png"
+      ],
+      "url": "https://picx.19981204.xyz",
+      "keywords": ["TypeScript", "Cloudflare Workers", "R2", "OAuth"],
+      "roles": []
+    },
+    {
+      "name": "Blog — Open-source Blog & Knowledge System",
+      "startDate": "",
+      "endDate": "",
+      "description": "An open-source blog/knowledge system with Markdown management, dual editing modes, AI writing assistance, and publishing on Cloudflare serverless stack.",
+      "highlights": [
+        "Visit blog: https://blog.19981204.xyz",
+        "Previous version: https://rx-ted.github.io/blog",
+        "Image: https://picx.19981204.xyz/rest/2026/11/DUSM8nk.png"
+      ],
+      "url": "https://blog.19981204.xyz",
+      "keywords": ["Next.js", "TypeScript", "Cloudflare", "D1", "R2", "KV"],
+      "roles": []
+    },
+    {
+      "name": "Portfolio — Personal Website",
+      "startDate": "",
+      "endDate": "",
+      "description": "Personal portfolio rebuilt from HTML/CSS/JS into an Astro + TypeScript project, deployed on Cloudflare Pages.",
+      "highlights": [
+        "Visit site: https://about.19981204.xyz",
+        "Image: https://picx.19981204.xyz/rest/2026/11/ozcr8nk.png"
+      ],
+      "url": "https://about.19981204.xyz",
+      "keywords": ["Astro", "TypeScript", "Cloudflare Pages"],
+      "roles": []
+    },
+    {
+      "name": "U.S. Government Recall Data Crawler & Processing System",
+      "startDate": "",
+      "endDate": "",
+      "description": "Independently designed data collection/processing system with full and daily incremental crawling, scheduling, retries, and tests; collected ~30k–40k records with 10–20 daily updates.",
+      "highlights": ["Image: https://picx.19981204.xyz/rest/M5gn8nk.png"],
+      "url": "",
+      "keywords": ["Node.js", "TypeScript", "MySQL", "AWS S3", "Jest"],
+      "roles": []
+    },
+    {
+      "name": "Blog Backend (Java)",
+      "startDate": "",
+      "endDate": "",
+      "description": "Spring Boot-based backend with auth, article/comment management, search, caching, async messaging, and access control.",
+      "highlights": ["Image: /assets/img/project-2.svg"],
+      "url": "",
+      "keywords": ["Java", "Spring Boot", "MySQL", "Redis", "RabbitMQ"],
+      "roles": []
+    },
+    {
+      "name": "System Performance Optimization (Internal Project)",
+      "startDate": "",
+      "endDate": "",
+      "description": "Optimized internal systems: C++ graph/algorithm improvements (~10%+ response gain), Python query/cache tuning (hundreds of ms lower latency on 10PB+ data access), and TypeScript UX/docs improvements (~20% faster onboarding).",
+      "highlights": ["Image: https://picx.19981204.xyz/rest/LrrO8nk.png"],
+      "url": "",
+      "keywords": ["C++", "Python", "TypeScript", "ProtoBuf"],
+      "roles": []
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

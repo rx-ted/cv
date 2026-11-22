@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Product Manager",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "Data-informed PM experienced in discovery, roadmapping, and cross-functional delivery to grow products and improve UX.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "Product Manager",
+      "url": "",
+      "startDate": "2021-06",
+      "endDate": "",
+      "summary": "Owned planning and iteration for product area X.",
+      "highlights": [
+        "Improved conversion by X% via funnel optimization",
+        "Shipped multiple releases across eng/design"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "Major",
+      "studyType": "B.S.",
+      "startDate": "2017-09",
+      "endDate": "2021-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Product",
+      "level": "",
+      "keywords": ["Discovery", "Roadmapping", "Analytics"]
+    },
+    {
+      "name": "Tools",
+      "level": "",
+      "keywords": ["Figma", "SQL", "Jira"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

@@ -1,0 +1,68 @@
+/* Utilities for preview/print wrappers and paginated preview */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-area {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+  .print-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .print-area {
+    overflow: visible !important;
+  }
+
+  /* Paginated preview: print each page as a sheet */
+  #resume-preview-root {
+    width: auto !important;
+  }
+  #resume-preview-root [data-print-scale] {
+    transform: none !important;
+  }
+  .resume-pages {
+    transform: none !important;
+    display: block !important;
+    width: auto !important;
+    gap: 0 !important;
+  }
+  .resume-page {
+    box-shadow: none !important;
+    border-bottom: none !important;
+    margin: 0 !important;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .resume-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  @page {
+    margin: 0;
+  }
+}

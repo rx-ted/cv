@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "物流/供应链专员",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "负责仓储与运输协调，熟悉库存管理、供应商对接与流程优化，注重成本与时效平衡。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "物流专员",
+      "url": "",
+      "startDate": "2020-03",
+      "endDate": "",
+      "summary": "统筹日常物流与库存作业。",
+      "highlights": [
+        "优化路线/排期降低运输成本 X%",
+        "建立盘点与报表流程提升准确率"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "院校名称",
+      "url": "",
+      "area": "物流管理/供应链",
+      "studyType": "大专/本科",
+      "startDate": "2016-09",
+      "endDate": "2020-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "业务",
+      "level": "",
+      "keywords": ["库存管理", "运输协调", "供应商管理"]
+    },
+    { "name": "工具", "level": "", "keywords": ["Excel", "WMS", "ERP"] }
+  ],
+  "languages": [{ "language": "中文", "fluency": "母语" }],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

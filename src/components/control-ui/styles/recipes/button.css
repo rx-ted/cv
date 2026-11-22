@@ -1,0 +1,357 @@
+@layer components {
+  :where([data-control-family="button"]:is([data-size="xs"], [data-variant="link"]))::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    translate: -50% -50%;
+    inline-size: max(100%, var(--target-min));
+    block-size: max(100%, var(--target-min));
+  }
+
+  @media (pointer: coarse) {
+    :where([data-control-family="button"][data-size])::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      translate: -50% -50%;
+      inline-size: 100%;
+      block-size: max(100%, var(--touch-target));
+    }
+
+    :where([data-control-family="button"][data-size][data-icon-only="true"])::after {
+      inline-size: max(100%, var(--touch-target));
+    }
+  }
+
+  :where([data-control-family="button"][data-control="true"]) {
+    --cui-button-radius: var(--nest-radius, var(--radius-control));
+    --cui-button-gap: calc(var(--spacing) * 1.5);
+    --cui-button-icon: 1rem;
+    --cui-button-height: var(--control-h-md);
+    --cui-button-padding-inline: var(--padding-x);
+    --cui-button-padding-block: calc(var(--spacing) * 1.5);
+    --cui-button-icon-padding-inline: max(0px, calc(var(--cui-button-padding-inline) - var(--spacing) * 0.5));
+    --cui-button-font-size: var(--text-body);
+    --cui-button-font-weight: var(--font-weight-medium);
+    --cui-button-background: transparent;
+    --cui-button-background-image: none;
+    --cui-button-foreground: var(--muted-foreground);
+    --cui-button-hover-background: var(--hover-fill);
+    --cui-button-hover-background-image: var(--cui-button-background-image);
+    --cui-button-hover-foreground: var(--foreground);
+    --cui-button-press-background: var(--cui-button-hover-background);
+    --cui-button-press-scale: 0.96;
+    --cui-button-active-background: var(--active-fill);
+    --cui-button-active-foreground: var(--foreground);
+    --cui-button-active-hover-background: var(--cui-button-active-background);
+    --cui-button-active-shadow: var(--cui-button-shadow);
+    --cui-button-shadow: 0 0 transparent;
+    --cui-button-hover-shadow: var(--cui-button-shadow);
+    --cui-button-press-shadow: var(--cui-button-hover-shadow);
+    --cui-button-open-background: var(--cui-button-hover-background);
+    --cui-button-open-foreground: var(--cui-button-hover-foreground);
+    --cui-button-open-shadow: var(--cui-button-shadow);
+    --cui-button-border-width: 0px;
+    --cui-button-border-style: solid;
+    --cui-button-border-color: var(--control-rim);
+    --cui-button-hover-border-color: var(--cui-button-border-color);
+    --cui-button-open-border-color: var(--cui-button-hover-border-color);
+    --cui-button-backdrop-filter: none;
+    border: var(--cui-button-border-width) var(--cui-button-border-style) var(--cui-button-border-color);
+    border-radius: var(--cui-button-radius);
+    background-color: var(--cui-button-background);
+    background-image: var(--cui-button-background-image);
+    backdrop-filter: var(--cui-button-backdrop-filter);
+    box-shadow: var(--cui-button-shadow);
+    color: var(--cui-button-foreground);
+    cursor: pointer;
+    font-weight: var(--cui-button-font-weight);
+    transition-property: scale, translate;
+    transition-timing-function: var(--ease-standard);
+    transition-duration: var(--duration-fast);
+  }
+
+  /* Every slot, not just root: callers override data-slot, and an unpositioned xs ::after hit area spans the nearest positioned ancestor. */
+  :where([data-control-family="button"]) {
+    position: relative;
+    gap: var(--cui-button-gap);
+  }
+
+  :where([data-control-family="button"][data-size="xs"]) {
+    --cui-button-gap: calc(var(--spacing) * 1);
+    --cui-button-icon: 0.875rem;
+    --cui-button-height: var(--control-h-xs);
+    --cui-button-padding-inline: calc(var(--padding-x) * 0.6);
+    --cui-button-font-size: var(--text-caption);
+  }
+  :where([data-control-family="button"][data-size="sm"]) {
+    --cui-button-height: var(--control-h-sm);
+    --cui-button-padding-inline: calc(var(--padding-x) * 0.75);
+    --cui-button-font-size: var(--text-label);
+  }
+  :where([data-control-family="button"][data-size="lg"]) {
+    --cui-button-gap: calc(var(--spacing) * 2);
+    --cui-button-icon: 1.125rem;
+    --cui-button-height: var(--control-h-lg);
+    --cui-button-padding-inline: calc(var(--padding-x) * 1.25);
+  }
+
+  :where([data-control-family="button"][data-size]) {
+    block-size: var(--cui-button-height);
+    padding-inline: var(--cui-button-padding-inline);
+    font-size: var(--cui-button-font-size);
+  }
+
+  :where(
+    [data-control-family="button"][data-control="true"][data-size]:not([data-icon-only="true"]):has(
+      > :is(svg, [data-slot="icon"]):first-child:not(:only-child),
+      > [data-slot="content"] > :is(svg, [data-slot="icon"]):first-child:not(:only-child),
+      > [data-control-family="swap"]:first-child > [data-state="active"] > :is(svg, [data-slot="icon"]):first-child:not(:only-child),
+      > [data-slot="content"]
+        > [data-control-family="swap"]:first-child
+        > [data-state="active"]
+        > :is(svg, [data-slot="icon"]):first-child:not(:only-child)
+    )
+  ) {
+    padding-inline-start: var(--cui-button-icon-padding-inline);
+  }
+
+  :where(
+    [data-control-family="button"][data-control="true"][data-size]:not([data-icon-only="true"]):has(
+      > :is(svg, [data-slot="icon"]):last-child:not(:only-child),
+      > [data-slot="content"] > :is(svg, [data-slot="icon"]):last-child:not(:only-child),
+      > [data-control-family="swap"]:last-child > [data-state="active"] > :is(svg, [data-slot="icon"]):last-child:not(:only-child),
+      > [data-slot="content"]
+        > [data-control-family="swap"]:last-child
+        > [data-state="active"]
+        > :is(svg, [data-slot="icon"]):last-child:not(:only-child)
+    )
+  ) {
+    padding-inline-end: var(--cui-button-icon-padding-inline);
+  }
+
+  :where([data-control-family="button"][data-icon-only="true"]) {
+    aspect-ratio: 1;
+    padding-inline: 0;
+  }
+
+  :where([data-control-family="button"][data-layout="tile"]) {
+    --cui-button-radius: var(--nest-radius, min(var(--radius-control), var(--radius-field)));
+    flex-direction: column;
+    block-size: auto;
+    padding-block: var(--cui-button-padding-block);
+    padding-inline: var(--cui-button-padding-inline);
+  }
+
+  :where([data-control-family="button"][data-layout="tile"] > [data-slot="content"]) {
+    flex-direction: column;
+  }
+
+  :where([data-control-family="button"][data-control="true"] svg) {
+    pointer-events: none;
+    flex-shrink: 0;
+    inline-size: var(--cui-button-icon);
+    block-size: var(--cui-button-icon);
+  }
+
+  :where([data-control-family="button"][data-cursor="default"]) {
+    cursor: default;
+  }
+
+  :where([data-control-family="button"][data-variant="ghost"]) {
+    --cui-button-foreground: var(--foreground);
+    --cui-button-active-background: transparent;
+    --cui-button-active-foreground: var(--foreground);
+    --cui-button-active-hover-background: var(--cui-button-hover-background);
+  }
+
+  :where([data-control-family="button"][data-variant="solid"]) {
+    --cui-button-background: var(--primary);
+    --cui-button-foreground: var(--primary-foreground);
+    --cui-button-hover-background: color-mix(in oklch, var(--primary) 90%, var(--foreground));
+    --cui-button-hover-foreground: var(--primary-foreground);
+    --cui-button-shadow: var(--shadow-sm);
+    --cui-button-active-background: var(--cui-button-background);
+    --cui-button-active-foreground: var(--cui-button-foreground);
+    --cui-button-active-hover-background: var(--cui-button-hover-background);
+  }
+
+  :where([data-control-family="button"][data-variant="surface"]) {
+    --cui-button-background: var(--control-fill);
+    --cui-button-foreground: var(--foreground);
+    --cui-button-hover-foreground: var(--foreground);
+    --cui-button-shadow: inset 0 0 0 var(--control-rim-width) var(--control-rim), var(--shadow-sm);
+    --cui-button-active-background: oklch(from var(--primary) l c h / 0.08);
+    --cui-button-active-hover-background: oklch(from var(--primary) l c h / 0.1);
+  }
+
+  :where([data-control-family="button"][data-variant="dashed"]) {
+    --cui-button-border-width: var(--control-rim-width);
+    --cui-button-border-style: dashed;
+    --cui-button-hover-border-color: oklch(from var(--foreground) l c h / 0.4);
+    --cui-button-hover-background: transparent;
+  }
+
+  :where([data-control-family="button"][data-variant="scrim"]) {
+    --cui-button-background: oklch(0 0 0 / 0.6);
+    --cui-button-foreground: oklch(1 0 0);
+    --cui-button-hover-background: oklch(0 0 0 / 0.8);
+    --cui-button-hover-foreground: var(--cui-button-foreground);
+    --cui-button-active-background: var(--cui-button-foreground);
+    --cui-button-active-foreground: oklch(0 0 0);
+    --cui-button-backdrop-filter: blur(8px);
+  }
+
+  :where([data-control-family="button"]:is([data-variant="surface"], [data-variant="ghost"], [data-variant="quiet"])) {
+    --cui-button-open-background: var(--active-fill);
+  }
+
+  :where([data-control-family="button"][data-variant="link"]) {
+    --cui-button-active-foreground: var(--cui-button-hover-foreground);
+    block-size: auto;
+    padding-inline: 0;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (hover: hover) {
+    :where(
+        [data-control-family="button"][data-variant="link"]:hover:not(:disabled, [data-disabled], [aria-disabled="true"], :has(:disabled))
+      ) {
+      text-decoration-line: underline;
+    }
+  }
+
+  :where([data-control-family="button"][data-tone="primary"]:not([data-variant="solid"], [data-variant="scrim"])) {
+    --cui-button-foreground: var(--primary-text);
+    --cui-button-hover-foreground: var(--primary-text);
+    --cui-button-active-foreground: var(--primary-text);
+  }
+
+  :where([data-control-family="button"][data-tone="danger"][data-variant="solid"]) {
+    --cui-button-background: var(--destructive);
+    --cui-button-foreground: var(--destructive-foreground);
+    --cui-button-hover-background: oklch(from var(--destructive) calc(l - 0.05) c h);
+    --cui-button-hover-foreground: var(--destructive-foreground);
+    --cui-button-active-background: var(--cui-button-background);
+    --cui-button-active-foreground: var(--cui-button-foreground);
+    --cui-button-active-hover-background: var(--cui-button-hover-background);
+  }
+
+  :where([data-control-family="button"][data-tone="danger"]:not([data-variant="solid"], [data-variant="scrim"])) {
+    --cui-button-foreground: var(--destructive-text);
+    --cui-button-hover-foreground: var(--destructive-text);
+    --cui-button-active-foreground: var(--destructive-text);
+  }
+
+  :where([data-control-family="button"][data-tone="danger"][data-variant="surface"]) {
+    --cui-button-active-background: oklch(from var(--destructive) l c h / 0.08);
+    --cui-button-active-hover-background: oklch(from var(--destructive) l c h / 0.1);
+    --cui-button-active-shadow: inset 0 0 0 var(--control-rim-width) oklch(from var(--destructive) l c h / 0.6), var(--shadow-sm);
+  }
+
+  :where([data-control-family="button"][data-shape="circle"]) {
+    --cui-button-radius: 9999px;
+  }
+
+  :where([data-control-family="button"][data-slot="group"]) {
+    gap: calc(var(--spacing) * 1);
+  }
+}
+
+@property --cui-button-radius {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-gap {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-icon {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-height {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-padding-inline {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-padding-block {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-icon-padding-inline {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-font-size {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-font-weight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 400;
+}
+
+@property --cui-button-background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-button-background-image {
+  syntax: "*";
+  inherits: true;
+}
+
+@property --cui-button-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-button-shadow {
+  syntax: "*";
+  inherits: true;
+}
+
+@property --cui-button-border-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-button-border-style {
+  syntax: "*";
+  inherits: true;
+}
+
+@property --cui-button-border-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-button-backdrop-filter {
+  syntax: "*";
+  inherits: true;
+}

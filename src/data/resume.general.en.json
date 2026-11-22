@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Job Title / Desired Role",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "https://your-website.com",
+    "summary": "A short summary of your strengths, years of experience, and core skills (3–5 lines).",
+    "location": {
+      "city": "City",
+      "region": "State/Province",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "yourname",
+        "url": "https://github.com/yourname"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Company Name",
+      "position": "Job Title",
+      "url": "",
+      "startDate": "2023-01",
+      "endDate": "",
+      "summary": "One sentence describing your scope of responsibility.",
+      "highlights": [
+        "Describe an achievement with measurable impact (e.g. reduced API latency by 30%).",
+        "Describe another key contribution you led or worked on."
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University Name",
+      "url": "",
+      "area": "Major",
+      "studyType": "Degree",
+      "startDate": "2019-09",
+      "endDate": "2023-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Skill Category",
+      "level": "",
+      "keywords": ["Skill A", "Skill B", "Skill C"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "Project Name",
+      "startDate": "",
+      "endDate": "",
+      "description": "Briefly describe the project, your role, and tech stack.",
+      "highlights": ["A short note on impact or outcome."],
+      "url": "",
+      "keywords": ["Tech1", "Tech2"],
+      "roles": []
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

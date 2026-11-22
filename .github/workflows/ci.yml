@@ -1,14 +1,13 @@
 name: CI
 
-# Pull requests only. Pushes to main run the same checks in release.yml,
-# right before semantic-release decides whether there is a version to cut.
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 
-# A newer push to the same PR cancels the run in progress.
 concurrency:
-  group: ci-${{ github.event.pull_request.number }}
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -16,7 +15,7 @@ permissions:
 
 jobs:
   check:
-    name: Lint, types and build
+    name: Format, lint and build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -31,10 +30,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint
+      - name: Format & lint
         run: pnpm lint
 
-      # The build comes first: it generates the route and layout types that the type check needs.
       - name: Build
         run: pnpm build
         env:
@@ -42,19 +40,3 @@ jobs:
 
       - name: Type check
         run: pnpm exec tsc --noEmit
-
-  docker:
-    name: Docker image builds
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: docker/setup-buildx-action@v4
-
-      # Build only, no push. Publishing happens in release.yml on a tagged version.
-      - uses: docker/build-push-action@v7
-        with:
-          context: .
-          push: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max

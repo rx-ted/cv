@@ -1,0 +1,75 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Recent Graduate / Target Role",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "Brief summary: education background, highlights from internships/projects, and career goals.",
+    "location": {
+      "city": "City",
+      "region": "State/Province",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University Name",
+      "url": "",
+      "area": "Major",
+      "studyType": "B.S. / M.S. etc.",
+      "startDate": "2021-09",
+      "endDate": "2025-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": ["Relevant coursework or honors (optional)"],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "",
+      "keywords": ["JavaScript", "Python"]
+    },
+    {
+      "name": "Tools & Frameworks",
+      "level": "",
+      "keywords": ["React", "Node.js"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "母语"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "Course / Personal Project",
+      "startDate": "2024-01",
+      "endDate": "2024-06",
+      "description": "What the project does and your contributions.",
+      "highlights": ["Measurable or clear outcome."],
+      "url": "",
+      "keywords": ["Tech stack"],
+      "roles": ["Developer"]
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

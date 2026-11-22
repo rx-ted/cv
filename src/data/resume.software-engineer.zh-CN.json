@@ -1,0 +1,86 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "软件工程师",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "https://github.com/yourname",
+    "summary": "专注于后端/全栈开发，熟悉分布式系统、API 设计与性能优化，有项目落地经验。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "yourname",
+        "url": "https://github.com/yourname"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "软件工程师",
+      "url": "",
+      "startDate": "2022-01",
+      "endDate": "",
+      "summary": "负责核心业务模块开发与维护。",
+      "highlights": ["通过重构将接口延迟降低 X%", "主导 XX 功能从设计到上线"],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "大学名称",
+      "url": "",
+      "area": "计算机科学与技术",
+      "studyType": "本科",
+      "startDate": "2018-09",
+      "endDate": "2022-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "编程语言",
+      "level": "",
+      "keywords": ["TypeScript", "Python", "Go"]
+    },
+    {
+      "name": "框架与工具",
+      "level": "",
+      "keywords": ["Node.js", "React", "PostgreSQL"]
+    }
+  ],
+  "languages": [
+    { "language": "中文", "fluency": "母语" },
+    { "language": "英语", "fluency": "流利" }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "项目名称",
+      "startDate": "",
+      "endDate": "",
+      "description": "简述项目与技术选型。",
+      "highlights": ["成果描述"],
+      "url": "",
+      "keywords": ["技术栈"],
+      "roles": []
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

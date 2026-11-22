@@ -1,0 +1,397 @@
+@layer components {
+  :where([data-control-family="field"][data-field-kind="input-group"][data-slot="addon"]) {
+    --nest-radius: max(0px, calc(var(--cui-field-radius) - var(--spacing) * 1.5));
+    color: var(--muted-foreground);
+  }
+
+  :where([data-control-family="field"][data-slot="root"][data-control="true"] > [data-control-family="button"]) {
+    --nest-radius: max(0px, calc(var(--cui-field-radius) - var(--spacing) * 1.5));
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"]:is([data-slot="decrement"], [data-slot="increment"])) {
+    background-color: var(--cui-field-affordance-background);
+    box-shadow: var(--cui-field-affordance-shadow);
+    color: var(--cui-field-affordance-foreground);
+    cursor: pointer;
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"]:is([data-slot="decrement"], [data-slot="increment"]) > svg),
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="scrub-area"] > svg),
+  :where([data-control-family="field"][data-field-kind="input-group"][data-slot="addon"] > svg) {
+    inline-size: calc(var(--spacing) * 3.5);
+    block-size: calc(var(--spacing) * 3.5);
+  }
+
+  :where([data-control-family="field"][data-slot="root"][data-control="true"]:is(button, a)) {
+    cursor: pointer;
+    --cui-field-foreground: var(--muted-foreground);
+    --_field-foreground: var(--cui-field-foreground);
+    color: var(--_field-foreground);
+    text-align: start;
+  }
+
+  @media (hover: hover) {
+    :where(
+        [data-control-family="field"][data-slot="root"][data-control="true"]:is(button, a):hover:not(
+          :disabled,
+          [data-disabled],
+          [aria-disabled="true"]
+        )
+      ) {
+      --_field-foreground: var(--foreground);
+    }
+  }
+
+  :where([data-control-family="field"][data-field-kind="input-group"][data-slot="input"]),
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="input"]) {
+    background: transparent;
+    color: var(--foreground);
+  }
+
+  :where([data-control-family="field"][data-field-kind="input-group"][data-slot="input"])::placeholder,
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="input"])::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  :where([data-control-family="field"][data-field-kind="input-group"][data-slot="input"]:disabled),
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="input"]:disabled) {
+    cursor: not-allowed;
+  }
+
+  @media (hover: hover) {
+    :where([data-control-family="field"][data-field-kind="number-field"][data-slot="decrement"]:hover:not(:disabled, [data-disabled])),
+    :where([data-control-family="field"][data-field-kind="number-field"][data-slot="increment"]:hover:not(:disabled, [data-disabled])) {
+      background-color: var(--cui-field-affordance-hover-background);
+      color: var(--foreground);
+    }
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="decrement"]) {
+    border-inline-end: 1px solid var(--border);
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="increment"]) {
+    border-inline-start: 1px solid var(--border);
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="decrement"]:active:not(:disabled, [data-disabled])),
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="increment"]:active:not(:disabled, [data-disabled])) {
+    background: var(--active-fill);
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="decrement"][data-disabled]),
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="increment"][data-disabled]) {
+    cursor: not-allowed;
+  }
+
+  :where(
+    [data-control-family="field"][data-field-kind="number-field"]:is([data-slot="decrement"], [data-slot="increment"])[data-disabled]:not(
+      [data-control-family="field"][data-control="true"][data-disabled] *
+    )
+  ) {
+    opacity: var(--disabled-opacity);
+  }
+
+  :where(
+    [data-control-family="field"][data-field-kind="number-field"][data-slot="group"]
+      > [data-control-family="field"][data-field-kind="number-field"][data-slot="scrub-area"]
+  ) {
+    padding-inline: calc(var(--spacing) * 2);
+    color: var(--muted-foreground);
+  }
+
+  :where(
+    [data-control-family="field"][data-field-kind="number-field"][data-slot="input"]:has(
+      + [data-control-family="field"][data-field-kind="number-field"][data-slot="scrub-area"]
+    )
+  ) {
+    padding-inline-end: 0;
+    text-align: end;
+  }
+
+  :where(
+    [data-control-family="field"][data-field-kind="number-field"][data-slot="scrub-area"]
+      + [data-control-family="field"][data-field-kind="number-field"][data-slot="input"]
+  ) {
+    padding-inline-start: 0;
+    text-align: start;
+  }
+
+  @media (hover: hover) {
+    :where(
+        [data-control-family="field"][data-field-kind="number-field"][data-slot="group"]
+          > [data-control-family="field"][data-field-kind="number-field"][data-slot="scrub-area"]:hover
+      ) {
+      color: var(--foreground);
+    }
+  }
+
+  :where(
+    [data-control-family="field"][data-field-kind="number-field"][data-slot="group"]:not([data-control])
+      > [data-control-family="field"][data-field-kind="number-field"][data-slot="input"]
+  ) {
+    inline-size: 6ch;
+  }
+
+  @supports (field-sizing: content) {
+    :where(
+        [data-control-family="field"][data-field-kind="number-field"][data-slot="group"]:not([data-control])
+          > [data-control-family="field"][data-field-kind="number-field"][data-slot="input"]
+      ) {
+      inline-size: auto;
+      min-inline-size: 2ch;
+      field-sizing: content;
+    }
+  }
+
+  :where([data-control-family="field"][data-field-kind="number-field"][data-slot="scrub-cursor"]) {
+    color: var(--foreground);
+    filter: drop-shadow(0 1px 1px oklch(0 0 0 / 0.05));
+  }
+
+  :where([data-control-family="field"][data-field-kind="input-otp"][data-slot="root"]) {
+    gap: calc(var(--spacing) * 2);
+  }
+
+  :where([data-control-family="field"][data-field-kind="input-otp"][data-slot="separator"]) {
+    block-size: 1px;
+    inline-size: calc(var(--spacing) * 2.5);
+    border-radius: 9999px;
+    background: var(--border);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="title"]) {
+    color: var(--foreground);
+    font-size: var(--text-label);
+    font-weight: var(--font-weight-medium);
+    text-wrap: balance;
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="label"]) {
+    color: var(--foreground);
+    font-size: var(--cui-field-label-font-size);
+    font-weight: var(--cui-field-label-font-weight);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="label"][data-disabled]) {
+    opacity: var(--disabled-opacity);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="label"][data-variant="card"]) {
+    padding-block: var(--cui-field-label-padding-block);
+    padding-inline: var(--cui-field-label-padding-inline);
+    border: var(--cui-field-label-border-width) solid var(--cui-field-label-border-color);
+    border-radius: var(--cui-field-label-radius);
+    background-color: var(--cui-field-label-background);
+    cursor: pointer;
+    transition-property: background-color, border-color;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-standard);
+  }
+
+  @media (hover: hover) {
+    :where(
+        [data-control-family="field"][data-field-kind="field"][data-slot="label"][data-variant="card"]:hover:not(
+          :has([data-control-family="choice"]:is([data-checked], [data-disabled]))
+        )
+      ) {
+      background-color: var(--cui-field-label-hover-background);
+    }
+  }
+
+  :where(
+    [data-control-family="field"][data-field-kind="field"][data-slot="label"][data-variant="card"]:has(
+      [data-control-family="choice"][data-checked]
+    )
+  ) {
+    border-color: var(--cui-field-label-checked-border-color);
+    background-color: var(--cui-field-label-checked-background);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="label"][data-variant="card"]:has([data-disabled])) {
+    cursor: not-allowed;
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="description"]) {
+    color: var(--muted-foreground);
+    font-size: var(--cui-field-description-font-size);
+    text-wrap: pretty;
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="error-reserve"]) {
+    font-size: var(--text-caption);
+    line-height: var(--text-caption--line-height);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="error"]) {
+    color: var(--destructive-text);
+    font-size: var(--text-caption);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="separator"]) {
+    block-size: 1px;
+    font-size: var(--text-caption);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="separator-content"]) {
+    margin-inline: auto;
+    padding-inline: calc(var(--spacing) * 2);
+    background-color: var(--background);
+    color: var(--muted-foreground);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="set"]) {
+    gap: calc(var(--spacing) * 4);
+    min-inline-size: 0;
+    margin: 0;
+    border-width: 0px;
+    padding: 0;
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"]) {
+    --cui-field-legend-foreground: var(--foreground);
+    --cui-field-legend-font-size: var(--text-label);
+    --cui-field-legend-font-weight: var(--font-weight-semibold);
+    --cui-field-label-radius: var(--radius-control);
+    --cui-field-label-background: transparent;
+    --cui-field-label-hover-background: var(--hover-fill);
+    --cui-field-label-checked-background: oklch(from var(--primary) l c h / 0.06);
+    --cui-field-label-border-color: var(--border);
+    --cui-field-label-checked-border-color: var(--primary);
+    --cui-field-label-border-width: var(--control-rim-width);
+    --cui-field-label-padding-block: calc(var(--spacing) * 3);
+    --cui-field-label-padding-inline: calc(var(--spacing) * 3);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="legend"]) {
+    color: var(--cui-field-legend-foreground);
+    font-size: var(--cui-field-legend-font-size);
+    font-weight: var(--cui-field-legend-font-weight);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="legend"][data-variant="section"]) {
+    --cui-field-legend-font-size: var(--text-body);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="root"]) {
+    gap: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="content"]) {
+    gap: calc(var(--spacing) * 1);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="group"]),
+  :where([data-control-family="field"][data-field-kind="form"][data-slot="root"]) {
+    gap: calc(var(--spacing) * 5);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="group"][data-variant="card"]) {
+    gap: 0;
+    overflow: hidden;
+    border: var(--cui-field-group-border-width) solid var(--cui-field-group-border-color);
+    border-radius: var(--cui-field-group-radius);
+    background: var(--cui-field-group-background);
+    box-shadow: var(--cui-field-group-shadow);
+    --_field-group-padding-block: var(--cui-field-group-padding-block);
+    --_field-group-padding-inline: var(--cui-field-group-padding-inline);
+    --_field-group-separator-color: var(--cui-field-group-separator-color);
+    --_field-group-separator-inset: var(--cui-field-group-separator-inset);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="group"][data-variant="card"] > *) {
+    position: relative;
+    padding-block: var(--_field-group-padding-block);
+    padding-inline: var(--_field-group-padding-inline);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="group"][data-variant="card"] > * + *)::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: var(--_field-group-separator-inset);
+    block-size: 1px;
+    background: var(--_field-group-separator-color);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="item"]) {
+    gap: calc(var(--spacing) * 2);
+  }
+
+  :where([data-control-family="field"][data-field-kind="field"][data-slot="separator"][data-content]) {
+    margin-block: calc(var(--spacing) * 2);
+    block-size: calc(var(--spacing) * 5);
+  }
+}
+
+@property --cui-field-label-radius {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-field-label-background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-field-label-hover-background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-field-label-checked-background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-field-label-border-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-field-label-checked-border-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-field-label-border-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-field-label-padding-block {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-field-label-padding-inline {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-field-legend-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cui-field-legend-font-size {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --cui-field-legend-font-weight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 400;
+}

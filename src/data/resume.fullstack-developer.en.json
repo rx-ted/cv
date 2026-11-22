@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Full Stack Developer",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "Full-stack developer able to deliver features from UI to services.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "Full Stack Developer",
+      "url": "",
+      "startDate": "2021-06",
+      "endDate": "",
+      "summary": "Delivered end-to-end product features.",
+      "highlights": [
+        "Shipped multiple modules independently",
+        "Improved collaboration and release flow"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "CS or related",
+      "studyType": "B.S.",
+      "startDate": "2017-09",
+      "endDate": "2021-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Frontend",
+      "level": "",
+      "keywords": ["React", "TypeScript"]
+    },
+    {
+      "name": "Backend",
+      "level": "",
+      "keywords": ["Node.js", "PostgreSQL"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

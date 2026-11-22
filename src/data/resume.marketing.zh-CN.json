@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "市场营销",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "负责品牌传播与增长活动，擅长内容运营、渠道投放与数据复盘。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "市场专员/经理",
+      "url": "",
+      "startDate": "2020-06",
+      "endDate": "",
+      "summary": "策划并执行线上线下营销活动。",
+      "highlights": ["拉新/转化指标提升 X%", "优化投放 ROI"],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "院校",
+      "url": "",
+      "area": "市场营销/传播",
+      "studyType": "本科",
+      "startDate": "2016-09",
+      "endDate": "2020-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "营销",
+      "level": "",
+      "keywords": ["内容运营", "渠道投放", "活动策划"]
+    },
+    {
+      "name": "分析",
+      "level": "",
+      "keywords": ["数据复盘", "Google Analytics"]
+    }
+  ],
+  "languages": [{ "language": "中文", "fluency": "母语" }],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react"
 
-import type { ResumeSettings } from "@/lib/resume/schema"
+import type { ResumeSettings } from "@/lib/resume/schema-legacy"
 
 import { FONTS } from "./font-list"
 
@@ -16,6 +16,14 @@ const PHOTO_RADIUS = { circle: "50%", rounded: "12%", square: "0" } as const
 /** Settings become CSS custom properties, and templates only read those. */
 export function cssVars(s: ResumeSettings): CSSProperties {
   const page = PAGE_SIZE[s.page.format]
+  const anyPage = s.page as any
+  const w =
+    typeof anyPage._widthMm === "number"
+      ? `${anyPage._widthMm}mm`
+      : `${page.widthMm}mm`
+  const h = anyPage._heightCss
+    ? String(anyPage._heightCss)
+    : `${page.heightMm}mm`
   return {
     "--cv-color": s.color,
     "--cv-color-soft": `color-mix(in srgb, ${s.color} 10%, white)`,
@@ -31,8 +39,8 @@ export function cssVars(s: ResumeSettings): CSSProperties {
     "--cv-fw-name": String(s.fontWeight.name),
     "--cv-fw-heading": String(s.fontWeight.heading),
     "--cv-fw-section": String(s.fontWeight.section),
-    "--cv-page-w": `${page.widthMm}mm`,
-    "--cv-page-h": `${page.heightMm}mm`,
+    "--cv-page-w": w,
+    "--cv-page-h": h,
     "--cv-mx": `${s.page.marginX}mm`,
     "--cv-my": `${s.page.marginY}mm`,
     "--cv-gap-section": `${s.spacing.section}pt`,

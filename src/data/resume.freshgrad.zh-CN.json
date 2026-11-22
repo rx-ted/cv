@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "应届毕业生 / 目标岗位",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "简历摘要：说明你的专业背景、实习/项目经历亮点以及求职方向。",
+    "location": {
+      "city": "城市",
+      "region": "省份",
+      "countryCode": "CN"
+    },
+    "profiles": []
+  },
+  "work": [],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "学校名称",
+      "url": "",
+      "area": "专业名称",
+      "studyType": "本科/硕士等",
+      "startDate": "2021-09",
+      "endDate": "2025-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": ["主修课程或在校荣誉（可选）"],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "编程语言",
+      "level": "",
+      "keywords": ["JavaScript", "Python"]
+    },
+    {
+      "name": "工具与框架",
+      "level": "",
+      "keywords": ["React", "Node.js"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "中文",
+      "fluency": "母语"
+    },
+    {
+      "language": "英语",
+      "fluency": ""
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "课程/个人项目名称",
+      "startDate": "2024-01",
+      "endDate": "2024-06",
+      "description": "项目简介：解决了什么问题、你负责的部分。",
+      "highlights": ["可量化或可描述的成果。"],
+      "url": "",
+      "keywords": ["技术栈"],
+      "roles": ["开发者"]
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

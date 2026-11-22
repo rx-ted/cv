@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "你的姓名",
+    "label": "UI/UX 设计师",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "138****0000",
+    "url": "",
+    "summary": "关注用户体验与界面设计，擅长研究、原型与设计规范落地。",
+    "location": { "city": "城市", "region": "省份", "countryCode": "CN" },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "公司名称",
+      "position": "UI/UX 设计师",
+      "url": "",
+      "startDate": "2021-01",
+      "endDate": "",
+      "summary": "负责产品体验设计与设计系统维护。",
+      "highlights": ["完成关键流程的体验优化", "输出可复用组件与规范"],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "院校",
+      "url": "",
+      "area": "设计相关专业",
+      "studyType": "本科",
+      "startDate": "2017-09",
+      "endDate": "2021-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "设计",
+      "level": "",
+      "keywords": ["Figma", "用户研究", "交互设计"]
+    },
+    { "name": "交付", "level": "", "keywords": ["Design System", "原型"] }
+  ],
+  "languages": [{ "language": "中文", "fluency": "母语" }],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "zh-CN"
+  }
+}

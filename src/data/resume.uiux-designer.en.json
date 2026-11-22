@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "UI/UX Designer",
+    "image": "",
+    "email": "your@email.com",
+    "phone": "+1 000 000 0000",
+    "url": "",
+    "summary": "UX-focused designer experienced in research, prototyping, and design systems.",
+    "location": {
+      "city": "City",
+      "region": "State",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Company",
+      "position": "UI/UX Designer",
+      "url": "",
+      "startDate": "2021-01",
+      "endDate": "",
+      "summary": "Owned product experience design and design system upkeep.",
+      "highlights": [
+        "Improved key user flows",
+        "Delivered reusable components and guidelines"
+      ],
+      "location": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "Design-related",
+      "studyType": "B.S.",
+      "startDate": "2017-09",
+      "endDate": "2021-06",
+      "gpa": "",
+      "courses": [],
+      "highlights": [],
+      "summary": ""
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Design",
+      "level": "",
+      "keywords": ["Figma", "User Research", "Interaction Design"]
+    },
+    {
+      "name": "Delivery",
+      "level": "",
+      "keywords": ["Design System", "Prototyping"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "流利"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "",
+    "lang": "en"
+  }
+}

@@ -1,6 +1,6 @@
-import { getPreset } from "./presets"
 import { WORDS } from "./i18n"
-import type { DateFormat, Locale, Resume, Section } from "./schema"
+import { getPreset } from "./presets"
+import type { DateFormat, Locale, Resume, Section } from "./schema-legacy"
 
 export const INTL_LOCALE: Record<Locale, string> = {
   en: "en-US",
@@ -9,10 +9,15 @@ export const INTL_LOCALE: Record<Locale, string> = {
   es: "es-ES",
   fr: "fr-FR",
   de: "de-DE",
+  "zh-CN": "zh-CN",
 }
 
 /** Dates are stored as "YYYY-MM" or "YYYY". Anything else is shown as typed. */
-export function formatDate(value: string, format: DateFormat, locale: Locale): string {
+export function formatDate(
+  value: string,
+  format: DateFormat,
+  locale: Locale,
+): string {
   const match = /^(\d{4})(?:-(\d{2}))?/.exec(value.trim())
   if (!match) return value.trim()
   const year = match[1]
@@ -35,20 +40,27 @@ export function formatRange(
   end: string,
   current: boolean,
   format: DateFormat,
-  locale: Locale
+  locale: Locale,
 ): string {
   const from = start ? formatDate(start, format, locale) : ""
-  const to = current ? WORDS[locale].present : end ? formatDate(end, format, locale) : ""
+  const w = WORDS[locale] || WORDS.en
+  const to = current ? w.present : end ? formatDate(end, format, locale) : ""
   if (from && to) return `${from} – ${to}`
   return from || to
 }
 
 export function sectionTitle(section: Section, locale: Locale): string {
-  return section.title.trim() || getPreset(section.type).titles[locale]
+  const preset = getPreset(section.type)
+  return (
+    section.title.trim() || (preset.titles as any)[locale] || preset.titles.en
+  )
 }
 
 export function fullName(resume: Pick<Resume, "personal">): string {
-  return [resume.personal.firstName, resume.personal.lastName].filter(Boolean).join(" ").trim()
+  return [resume.personal.firstName, resume.personal.lastName]
+    .filter(Boolean)
+    .join(" ")
+    .trim()
 }
 
 /** Strip tags for plain text exports and keyword analysis. */
@@ -82,14 +94,20 @@ export function hrefFor(url: string): string {
   return `https://${url}`
 }
 
-export const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
+export const isEmail = (value: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
 
 /** Digits with the usual separators, at least 6 of them. */
-export const isPhone = (value: string) => /^\+?[\d\s().-]{6,}$/.test(value.trim()) && (value.match(/\d/g) ?? []).length >= 6
+export const isPhone = (value: string) =>
+  /^\+?[\d\s().-]{6,}$/.test(value.trim()) &&
+  (value.match(/\d/g) ?? []).length >= 6
 
 /** Something with a dot and no spaces, or an explicit http(s) scheme. */
 export const isUrl = (value: string) => {
   const v = value.trim()
   if (/^https?:\/\/\S+$/i.test(v)) return true
-  return /^[^\s/:]+\.[a-z0-9-]{2,}(\/\S*)?$/i.test(v) && !/^[a-z][a-z0-9+.-]*:/i.test(v)
+  return (
+    /^[^\s/:]+\.[a-z0-9-]{2,}(\/\S*)?$/i.test(v) &&
+    !/^[a-z][a-z0-9+.-]*:/i.test(v)
+  )
 }
