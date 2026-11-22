@@ -57,6 +57,20 @@ pnpm build
 pnpm start
 ```
 
+### 部署到 Cloudflare Pages
+
+项目已配置静态导出（`next.config.ts` 中 `output: "export"`），构建产物输出到 `dist/`。仓库根目录包含 `wrangler.jsonc`，可用于 Cloudflare Pages 部署。
+
+- 构建命令：`pnpm build`
+- 输出目录：`dist`
+
+使用 Wrangler 部署时：
+
+```bash
+pnpm build
+npx wrangler pages deploy
+```
+
 ### 配置说明
 
 当前项目以本地/自托管使用为主，常见配置通过环境变量或部署平台配置注入（若你在部署时需要自定义域名、反向代理等，请按你的环境自行配置）。

@@ -24,7 +24,7 @@ export function PublicationsSection({
   onDeleteModule,
 }: SectionEditorProps) {
   const updateActive = useAppStore((s) => s.updateActive)
-  const visible = resume.meta.cvfree.sectionVisibility["publications"] !== false
+  const visible = resume.meta.cvfree.sectionVisibility.publications !== false
   const items = resume.publications
   return (
     <SectionCard
@@ -48,7 +48,7 @@ export function PublicationsSection({
       count={items.length}
       onToggle={() =>
         updateActive((d) => {
-          d.meta.cvfree.sectionVisibility["publications"] = !visible
+          d.meta.cvfree.sectionVisibility.publications = !visible
         })
       }
       onAdd={() =>
