@@ -30,7 +30,7 @@ export function CustomSectionsEditor({
 }: SectionEditorProps) {
   const updateActive = useAppStore((s) => s.updateActive)
   const cv = resume.meta.cvfree
-  const groupVisible = cv.sectionVisibility["custom"] !== false
+  const groupVisible = cv.sectionVisibility.custom !== false
   const sections = cv.customSections || []
 
   const addSection = () =>
@@ -65,7 +65,7 @@ export function CustomSectionsEditor({
       count={sections.length}
       onToggle={() =>
         updateActive((d) => {
-          d.meta.cvfree.sectionVisibility["custom"] = !groupVisible
+          d.meta.cvfree.sectionVisibility.custom = !groupVisible
         })
       }
       onAdd={addSection}

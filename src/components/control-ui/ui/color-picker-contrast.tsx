@@ -111,7 +111,7 @@ const isInsideArea = (brightness: number) => brightness > AREA_EDGE_MARGIN && br
 
 function failRegionClipPath(bands: ContrastFailBand[]): string {
   const brightEdge = bands.map((band) => `${band.saturation}% ${100 - band.failsTo}%`);
-  const darkEdge = bands.toReversed().map((band) => `${band.saturation}% ${100 - band.failsFrom}%`);
+  const darkEdge = [...bands].reverse().map((band) => `${band.saturation}% ${100 - band.failsFrom}%`);
   return `polygon(${[...brightEdge, ...darkEdge].join(", ")})`;
 }
 

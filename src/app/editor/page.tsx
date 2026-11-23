@@ -141,7 +141,7 @@ export default function EditorPage() {
     if (mounted && !resume) router.replace("/")
   }, [mounted, resume, router])
 
-  if (!mounted || !resume || !resume.meta?.cvfree) {
+  if (!mounted || !resume?.meta?.cvfree) {
     return <div className="p-8 text-sm text-muted-foreground">Loading...</div>
   }
 

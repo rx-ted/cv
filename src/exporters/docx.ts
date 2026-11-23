@@ -217,7 +217,6 @@ export async function exportDocx(doc: ResumeDocument, lang: AppLanguage) {
 
   const d = new Document({ sections: [{ properties: {}, children }] })
   const blob = await Packer.toBlob(d)
-  const name =
-    (doc.meta.cvfree.title || "resume").replace(/[\\/:*?"<>|]/g, "_") + ".docx"
+  const name = `${(doc.meta.cvfree.title || "resume").replace(/[\\/:*?"<>|]/g, "_")}.docx`
   dl(blob, name)
 }

@@ -14,7 +14,6 @@ import type {
   AppLanguage,
   LayoutConfig,
   ResumeDocument,
-  TemplateId,
   TextConfig,
   ThemeConfig,
 } from "@/lib/resume/schema"
@@ -336,14 +335,14 @@ export const useAppStore = create<AppState>()(
               ...doc,
               basics: {
                 ...(doc.basics || {}),
-                location: (doc.basics || {}).location || {
+                location: doc.basics?.location || {
                   address: "",
                   postalCode: "",
                   city: "",
                   countryCode: "",
                   region: "",
                 },
-                profiles: Array.isArray((doc.basics || {}).profiles)
+                profiles: Array.isArray(doc.basics?.profiles)
                   ? doc.basics.profiles
                   : [],
               },
@@ -424,14 +423,12 @@ export const useAppStore = create<AppState>()(
                     : [],
                   layout: {
                     ...(cv.layout || {}),
-                    showPageHeader: !!(cv.layout || {}).showPageHeader,
-                    showPageFooter: !!(cv.layout || {}).showPageFooter,
-                    pageHeaderText: (cv.layout || {}).pageHeaderText || "",
-                    pageFooterText: (cv.layout || {}).pageFooterText || "",
+                    showPageHeader: !!cv.layout?.showPageHeader,
+                    showPageFooter: !!cv.layout?.showPageFooter,
+                    pageHeaderText: cv.layout?.pageHeaderText || "",
+                    pageFooterText: cv.layout?.pageFooterText || "",
                     pagination:
-                      (cv.layout || {}).pagination === "dashed"
-                        ? "dashed"
-                        : "gap",
+                      cv.layout?.pagination === "dashed" ? "dashed" : "gap",
                   },
                 },
               },

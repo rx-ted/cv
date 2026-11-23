@@ -5,13 +5,13 @@ export type FormSubmitEvent = Parameters<NonNullable<ComponentProps<"form">["onS
 
 export type ControlledChoice<TValue extends string = string> = {
   value?: TValue;
-  defaultValue?: NoInfer<TValue>;
+  defaultValue?: TValue;
   onValueChange?: (value: TValue) => void;
 };
 
 export type ControlledMultiChoice<TValue extends string = string> = {
   value?: TValue[];
-  defaultValue?: NoInfer<TValue>[];
+  defaultValue?: TValue[];
   onValueChange?: (value: TValue[]) => void;
 };
 

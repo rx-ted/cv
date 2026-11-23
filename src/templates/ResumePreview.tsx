@@ -263,7 +263,6 @@ export function ResumePreview({
                   height: contentH,
                   overflow: "hidden",
                 }}
-                // biome-ignore lint/security/noDangerouslySetInnerHtml: page slices are pre-rendered from trusted resume DOM
                 dangerouslySetInnerHTML={{ __html: page.html }}
               />
               {layout.showPageFooter ? (

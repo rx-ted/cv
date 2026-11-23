@@ -25,7 +25,7 @@ export function WorkSection({
 }: SectionEditorProps) {
   const updateActive = useAppStore((s) => s.updateActive)
   const cv = resume.meta.cvfree
-  const visible = cv.sectionVisibility["work"] !== false
+  const visible = cv.sectionVisibility.work !== false
   const items = resume.work
   return (
     <SectionCard
@@ -49,7 +49,7 @@ export function WorkSection({
       count={items.length}
       onToggle={() =>
         updateActive((d) => {
-          d.meta.cvfree.sectionVisibility["work"] = !visible
+          d.meta.cvfree.sectionVisibility.work = !visible
         })
       }
       onAdd={() =>

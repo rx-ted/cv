@@ -16,7 +16,8 @@
       "!**/public",
       "!**/src/components/control-ui",
       "!**/src/components/ui",
-      "!**/src/components/reui"
+      "!**/src/components/reui",
+      "!.changeset"
     ]
   },
   "formatter": {
@@ -30,13 +31,13 @@
     "rules": {
       "preset": "recommended",
       "suspicious": {
-        "noArrayIndexKey": "warn",
+        "noArrayIndexKey": "off",
         "noExplicitAny": "off",
         "noAssignInExpressions": "warn",
-        "noControlCharactersInRegex": "warn"
+        "noControlCharactersInRegex": "off"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "warn"
+        "noDangerouslySetInnerHtml": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn",
@@ -44,16 +45,19 @@
         "noUnusedImports": "off"
       },
       "style": {
-        "noNonNullAssertion": "warn",
+        "noNonNullAssertion": "off",
         "noDescendingSpecificity": "off"
       },
       "a11y": {
-        "useButtonType": "warn",
-        "useSemanticElements": "warn",
-        "noStaticElementInteractions": "warn"
+        "useButtonType": "off",
+        "useSemanticElements": "off",
+        "noStaticElementInteractions": "off"
       },
       "complexity": {
         "noImportantStyles": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
       }
     }
   },

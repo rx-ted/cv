@@ -25,7 +25,7 @@ function toHtml(s: string): string {
 function highlightsHtml(summary: string, highlights: string[]): string {
   const parts: string[] = []
   if (summary?.trim()) parts.push(toHtml(summary))
-  const hs = (highlights || []).filter((h) => h && h.trim())
+  const hs = (highlights || []).filter((h) => h?.trim())
   if (hs.length) {
     parts.push(
       `<ul>${hs.map((h) => `<li>${/<\/?[a-z][\s\S]*>/i.test(h) ? h : esc(h)}</li>`).join("")}</ul>`,

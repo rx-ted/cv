@@ -22,7 +22,7 @@ export function ReferencesSection({
   onDeleteModule,
 }: SectionEditorProps) {
   const updateActive = useAppStore((s) => s.updateActive)
-  const visible = resume.meta.cvfree.sectionVisibility["references"] !== false
+  const visible = resume.meta.cvfree.sectionVisibility.references !== false
   const items = resume.references
   return (
     <SectionCard
@@ -46,7 +46,7 @@ export function ReferencesSection({
       count={items.length}
       onToggle={() =>
         updateActive((d) => {
-          d.meta.cvfree.sectionVisibility["references"] = !visible
+          d.meta.cvfree.sectionVisibility.references = !visible
         })
       }
       onAdd={() =>

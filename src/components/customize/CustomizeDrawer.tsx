@@ -332,7 +332,7 @@ export function CustomizePanel({
                       th.template = tpl.id
                     })
                   }
-                  title={`${name}：${desc}`}
+                  title={`${name}: ${desc}`}
                   className={`border rounded p-2.5 text-left ${activeTemplate === tpl.id ? "border-primary bg-primary/10" : "border-border hover:border-foreground/30"}`}
                 >
                   <div className="text-sm font-medium">{name}</div>
